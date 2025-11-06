@@ -62,7 +62,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -114,7 +114,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -170,7 +170,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -222,7 +222,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -274,7 +274,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -326,7 +326,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -382,7 +382,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>
@@ -434,7 +434,7 @@ const FeaturedSlider = () => {
                     </div>
                     <div className="col-lg-5 col-5 text-end">
                       <Link href="/job-details">
-                        <span className="btn btn-apply-now">Apply now</span>
+                        <span className="btn btn-apply-now">Başvur</span>
                       </Link>
                     </div>
                   </div>

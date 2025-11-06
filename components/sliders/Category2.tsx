@@ -114,7 +114,7 @@ const CategorySlider2 = () => {
                           <h6 className="color-white mb-5">{item.title}</h6>
                           <p className="color-white font-xs">
                             <span>{item.count}</span>
-                            <span> Jobs Available</span>
+                            <span> Burslar Mevcut</span>
                           </p>
                         </div>
                       </div>

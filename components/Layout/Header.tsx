@@ -77,28 +77,28 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                   </li>
                   <li className="has-children">
                     <Link href="/jobs-grid">
-                      <span>Find a Job</span>
+                      <span>Burs Bul</span>
                     </Link>
 
                     <ul className="sub-menu">
                       <li>
                         <Link href="/jobs-grid">
-                          <span>Jobs Grid</span>
+                          <span>Burslar Grid</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/jobs-list">
-                          <span>Jobs List</span>
+                          <span>Burslar List</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/job-details">
-                          <span>Jobs Details</span>
+                          <span>Burs Detayları</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/job-details-2">
-                          <span>Jobs Details 2 </span>
+                          <span>Burs Detayları 2 </span>
                         </Link>
                       </li>
                     </ul>
@@ -116,30 +116,30 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                       </li>
                       <li>
                         <Link href="/company-details">
-                          <span>Company Details</span>
+                          <span>Kurum Detayları</span>
                         </Link>
                       </li>
                     </ul>
                   </li>
                   <li className="has-children">
                     <Link href="/candidates-grid">
-                      <span>Candidates</span>
+                      <span>Öğrenciler</span>
                     </Link>
 
                     <ul className="sub-menu">
                       <li>
                         <Link href="/candidates-grid">
-                          <span>Candidates Grid</span>
+                          <span>Öğrenciler Grid</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/candidate-details">
-                          <span>Candidate Details</span>
+                          <span>Öğrenci Detayları</span>
                         </Link>
                       </li>
                       <li>
                         <Link href="/candidate-profile">
-                          <span>Candidate Profile</span>
+                          <span>Öğrenci Profili</span>
                         </Link>
                       </li>
                     </ul>
@@ -297,28 +297,28 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                     </li>
                     <li className="has-children">
                       <Link href="/jobs-grid">
-                        <span>Find a Job</span>
+                        <span>Burs Bul</span>
                       </Link>
 
                       <ul className="sub-menu">
                         <li>
                           <Link href="/jobs-grid">
-                            <span>Jobs Grid</span>
+                            <span>Burslar Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/jobs-list">
-                            <span>Jobs List</span>
+                            <span>Burslar List</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details">
-                            <span>Jobs Details</span>
+                            <span>Burs Detayları</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details-2">
-                            <span>Jobs Details 2 </span>
+                            <span>Burs Detayları 2 </span>
                           </Link>
                         </li>
                       </ul>
@@ -336,25 +336,25 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                         </li>
                         <li>
                           <Link href="/company-details">
-                            <span>Company Details</span>
+                            <span>Kurum Detayları</span>
                           </Link>
                         </li>
                       </ul>
                     </li>
                     <li className="has-children">
                       <Link href="/candidates-grid">
-                        <span>Candidates</span>
+                        <span>Öğrenciler</span>
                       </Link>
 
                       <ul className="sub-menu">
                         <li>
                           <Link href="/candidates-grid">
-                            <span>Candidates Grid</span>
+                            <span>Öğrenciler Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/candidate-details">
-                            <span>Candidate Details</span>
+                            <span>Öğrenci Detayları</span>
                           </Link>
                         </li>
                       </ul>
@@ -525,28 +525,28 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                     </li>
                     <li className="has-children">
                       <Link href="/jobs-grid">
-                        <span>Find a Job</span>
+                        <span>Burs Bul</span>
                       </Link>
 
                       <ul className="sub-menu">
                         <li>
                           <Link href="/jobs-grid">
-                            <span>Jobs Grid</span>
+                            <span>Burslar Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/jobs-list">
-                            <span>Jobs List</span>
+                            <span>Burslar List</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details">
-                            <span>Jobs Details</span>
+                            <span>Burs Detayları</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details-2">
-                            <span>Jobs Details 2 </span>
+                            <span>Burs Detayları 2 </span>
                           </Link>
                         </li>
                       </ul>
@@ -564,25 +564,25 @@ const Header = ({ handleOpen, handleRemove, openClass }: HeaderProps) => {
                         </li>
                         <li>
                           <Link href="/company-details">
-                            <span>Company Details</span>
+                            <span>Kurum Detayları</span>
                           </Link>
                         </li>
                       </ul>
                     </li>
                     <li className="has-children">
                       <Link href="/candidates-grid">
-                        <span>Candidates</span>
+                        <span>Öğrenciler</span>
                       </Link>
 
                       <ul className="sub-menu">
                         <li>
                           <Link href="/candidates-grid">
-                            <span>Candidates Grid</span>
+                            <span>Öğrenciler Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/candidate-details">
-                            <span>Candidate Details</span>
+                            <span>Öğrenci Detayları</span>
                           </Link>
                         </li>
                       </ul>

@@ -12,7 +12,7 @@ export default function CandidateGrid() {
             <div className="container">
               <div className="banner-hero banner-company">
                 <div className="block-banner text-center">
-                  <h3 className="wow animate__animated animate__fadeInUp">Browse Candidates</h3>
+                  <h3 className="wow animate__animated animate__fadeInUp">Öğrencileri İncele</h3>
                   <div className="font-sm color-text-paragraph-2 mt-10 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero repellendus magni, <br className="d-none d-xl-block" />
                     atque delectus molestias quis?
@@ -162,7 +162,7 @@ export default function CandidateGrid() {
                   <div className="row">
                     <div className="col-xl-6 col-lg-5">
                       <span className="text-small text-showing">
-                        Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
+                        Showing <strong>41-60 </strong>of <strong>944 </strong>burslar
                       </span>
                     </div>
                     <div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">

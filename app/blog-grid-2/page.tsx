@@ -92,10 +92,10 @@ export default function BlogGrid2() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>21 Job Interview Tips: How To Make a Great Impression</span>
+                                <span>21 Burs Mülakatı İpuçları: Harika Bir İzlenim Bırakmanın Yolları</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -138,7 +138,7 @@ export default function BlogGrid2() {
                                 <span>Email Examples: How To Respond to Employer Interview Requests</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -181,7 +181,7 @@ export default function BlogGrid2() {
                                 <span>How To Write an Application Letter (With Examples)</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -221,10 +221,10 @@ export default function BlogGrid2() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>17 jobs hired at 15 (and even 14) you should know</span>
+                                <span>15 (ve hatta 14) yaşında işe alınan 17 burslar hakkında bilmeniz gerekenler</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -267,7 +267,7 @@ export default function BlogGrid2() {
                                 <span>How To Write a Cover Letter (Plus Tips and Examples)</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -310,7 +310,7 @@ export default function BlogGrid2() {
                                 <span>10 Best Skills To Include on a Resume in 2022</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -350,10 +350,10 @@ export default function BlogGrid2() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>39 Strengths and Weaknesses To Discuss in a Job Interview</span>
+                                <span>39 Burs Mülakatında Tartışılacak Güçlü ve Zayıf Yönler</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -396,7 +396,7 @@ export default function BlogGrid2() {
                                 <span>List of Weaknesses: 10 Things To Say in an Interview</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">

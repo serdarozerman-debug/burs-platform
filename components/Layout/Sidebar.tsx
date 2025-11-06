@@ -90,28 +90,28 @@ const Sidebar = ({ openClass }: SidebarProps) => {
                       </span>
 
                       <Link href="/jobs-grid">
-                        <span>Find a Job</span>
+                        <span>Burs Bul</span>
                       </Link>
 
                       <ul className={isActive.key == 2 ? "sub-menu d-block" : "sub-menu d-none"}>
                         <li>
                           <Link href="/jobs-grid">
-                            <span>Jobs Grid</span>
+                            <span>Burslar Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/jobs-list">
-                            <span>Jobs List</span>
+                            <span>Burslar List</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details">
-                            <span>Jobs Details</span>
+                            <span>Burs Detayları</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/job-details-2">
-                            <span>Jobs Details 2 </span>
+                            <span>Burs Detayları 2 </span>
                           </Link>
                         </li>
                       </ul>
@@ -133,7 +133,7 @@ const Sidebar = ({ openClass }: SidebarProps) => {
                         </li>
                         <li>
                           <Link href="/company-details">
-                            <span>Company Details</span>
+                            <span>Kurum Detayları</span>
                           </Link>
                         </li>
                       </ul>
@@ -144,18 +144,18 @@ const Sidebar = ({ openClass }: SidebarProps) => {
                       </span>
 
                       <Link href="/candidates-grid">
-                        <span>Candidates</span>
+                        <span>Öğrenciler</span>
                       </Link>
 
                       <ul className={isActive.key == 4 ? "sub-menu d-block" : "sub-menu d-none"}>
                         <li>
                           <Link href="/candidates-grid">
-                            <span>Candidates Grid</span>
+                            <span>Öğrenciler Grid</span>
                           </Link>
                         </li>
                         <li>
                           <Link href="/candidate-details">
-                            <span>Candidate Details</span>
+                            <span>Öğrenci Detayları</span>
                           </Link>
                         </li>
                       </ul>

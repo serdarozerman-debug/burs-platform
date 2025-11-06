@@ -18,20 +18,17 @@ export default function Home() {
                 <div className="col-xl-8 col-lg-12">
                   <div className="block-banner">
                     <h1 className="heading-banner wow animate__animated animate__fadeInUp">
-                      The <span className="color-brand-2">Easiest Way</span>
-                      <br className="d-none d-lg-block" />
-                      to Get Your New Job
+                      Yeni Bursunuzu Bulmanın <span className="color-brand-2">En Kolay Yolu</span>
                     </h1>
                     <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
-                      Each month, more than 3 million job seekers turn to <br className="d-none d-lg-block" />
-                      website in their search for work, making over 140,000 <br className="d-none d-lg-block" />
-                      applications every single day
+                      Her ay binlerce öğrenci burs arayışında. <br className="d-none d-lg-block" />
+                      Sen de hayallerindeki bursu bul!
                     </div>
                     <div className="form-find mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
                       <form>
                         <div className="box-industry">
                           <select className="form-input mr-10 select-active input-industry">
-                            <option value={0}>Industry</option>
+                            <option value={0}>Kategori</option>
                             <option value={1}>Software</option>
                             <option value={2}>Finance</option>
                             <option value={3}>Recruting</option>
@@ -42,7 +39,7 @@ export default function Home() {
                         </div>
                         <div className="box-industry">
                           <select className="form-input mr-10 select-active  input-location">
-                            <option value="">Location</option>
+                            <option value="">Konum</option>
                             <option value="AX">Aland Islands</option>
                             <option value="AF">Afghanistan</option>
                             <option value="AL">Albania</option>
@@ -289,12 +286,12 @@ export default function Home() {
                             <option value="ZW">Zimbabwe</option>
                           </select>
                         </div>
-                        <input className="form-input input-keysearch mr-10" type="text" placeholder="Your keyword... " />
-                        <button className="btn btn-default btn-find font-sm">Search</button>
+                        <input className="form-input input-keysearch mr-10" type="text" placeholder="Arama yapın... " />
+                        <button className="btn btn-default btn-find font-sm">Ara</button>
                       </form>
                     </div>
                     <div className="list-tags-banner mt-60 wow animate__animated animate__fadeInUp" data-wow-delay=".3s">
-                      <strong>Popular Searches:</strong>
+                      <strong>Popüler Aramalar:</strong>
                       <Link href="#">Designer,</Link>
                       <Link href="#">Web,</Link>
                       <Link href="#">IOS,</Link>
@@ -330,8 +327,8 @@ export default function Home() {
           <div className="section-box wow animate__animated animate__fadeIn">
             <div className="container">
               <div className="text-center">
-                <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Browse by category</h2>
-                <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Find the job that’s perfect for you. about 800+ new jobs everyday</p>
+                <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Kategoriye Göre İncele</h2>
+                <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Sana uygun bursu bul. Her gün 800+ yeni burs fırsatı</p>
               </div>
               <div className="box-swiper mt-50">
                 <CategorySlider />
@@ -343,16 +340,16 @@ export default function Home() {
           <div className="container">
             <div className="box-we-hiring">
               <div className="text-1">
-                <span className="text-we-are">We are</span>
-                <span className="text-hiring">Hiring</span>
+                <span className="text-we-are">Biz</span>
+                <span className="text-hiring">İşe Alıyoruz</span>
               </div>
               <div className="text-2">
-                Let’s <span className="color-brand-1">Work</span> Together
-                <br /> &amp; <span className="color-brand-1">Explore</span> Opportunities
+                Birlikte <span className="color-brand-1">Çalışalım</span>
+                <br /> &amp; <span className="color-brand-1">Fırsatları</span> Keşfedelim
               </div>
               <div className="text-3">
                 <div className="btn btn-apply btn-apply-icon" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                  Apply now
+                  Şimdi Başvur
                 </div>
               </div>
             </div>
@@ -361,8 +358,8 @@ export default function Home() {
         <section className="section-box mt-50">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs of the day</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Search and connect with the right candidates faster. </p>
+              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Günün Bursları</h2>
+              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Doğru öğrencilerle hızlıca buluş ve bağlantı kur. </p>
             </div>
             <div className="mt-70">
               <CategoryTab />
@@ -383,19 +380,19 @@ export default function Home() {
               </div>
               <div className="col-lg-6 col-sm-12">
                 <div className="content-job-inner">
-                  <span className="color-text-mutted text-32">Millions Of Jobs. </span>
+                  <span className="color-text-mutted text-32">Milyonlarca Burs Fırsatı. </span>
                   <h2 className="text-52 wow animate__animated animate__fadeInUp">
-                    Find The One That’s <span className="color-brand-2">Right</span> For You
+                    Sana <span className="color-brand-2">Uygun</span> Olanı Bul
                   </h2>
-                  <div className="mt-40 pr-50 text-md-lh28 wow animate__animated animate__fadeInUp">Search all the open positions on the web. Get your own personalized salary estimate. Read reviews on over 600,000 companies worldwide. The right job is out there.</div>
+                  <div className="mt-40 pr-50 text-md-lh28 wow animate__animated animate__fadeInUp">Web'deki tüm açık pozisyonları ara. Kendi kişiselleştirilmiş burs miktarı tahminini al. Dünya çapında 600.000'den fazla kurum hakkında yorumları oku. Doğru burs seni bekliyor.</div>
                   <div className="mt-40">
                     <div className="wow animate__animated animate__fadeInUp">
                       <Link href="/jobs-grid">
-                        <span className="btn btn-default">Search Jobs</span>
+                        <span className="btn btn-default">Bursları İncele</span>
                       </Link>
 
                       <Link href="/page-about">
-                        <span className="btn btn-link">Learn More</span>
+                        <span className="btn btn-link">Daha Fazla Bilgi</span>
                       </Link>
                     </div>
                   </div>
@@ -413,11 +410,11 @@ export default function Home() {
                     <span className="count">25</span>
                     <span> K+</span>
                   </h1>
-                  <h5>Completed Cases</h5>
+                  <h5>Tamamlanan Projeler</h5>
                   <p className="font-sm color-text-paragraph mt-10">
-                    We always provide people a <br className="d-none d-lg-block" />
-                    complete solution upon focused of
-                    <br className="d-none d-lg-block" /> any business
+                    Her zaman insanlara <br className="d-none d-lg-block" />
+                    odaklanmış, eksiksiz çözümler
+                    <br className="d-none d-lg-block" /> sunuyoruz
                   </p>
                 </div>
               </div>
@@ -427,11 +424,11 @@ export default function Home() {
                     <span className="count">17</span>
                     <span> +</span>
                   </h1>
-                  <h5>Our Office</h5>
+                  <h5>Ofislerimiz</h5>
                   <p className="font-sm color-text-paragraph mt-10">
-                    We always provide people a <br className="d-none d-lg-block" />
-                    complete solution upon focused of <br className="d-none d-lg-block" />
-                    any business
+                    Her zaman insanlara <br className="d-none d-lg-block" />
+                    odaklanmış, eksiksiz çözümler <br className="d-none d-lg-block" />
+                    sunuyoruz
                   </p>
                 </div>
               </div>
@@ -441,11 +438,11 @@ export default function Home() {
                     <span className="count">86</span>
                     <span> +</span>
                   </h1>
-                  <h5>Skilled People</h5>
+                  <h5>Uzman İnsanlar</h5>
                   <p className="font-sm color-text-paragraph mt-10">
-                    We always provide people a <br className="d-none d-lg-block" />
-                    complete solution upon focused of <br className="d-none d-lg-block" />
-                    any business
+                    Her zaman insanlara <br className="d-none d-lg-block" />
+                    odaklanmış, eksiksiz çözümler <br className="d-none d-lg-block" />
+                    sunuyoruz
                   </p>
                 </div>
               </div>
@@ -455,11 +452,11 @@ export default function Home() {
                     <span className="count">28</span>
                     <span> +</span>
                   </h1>
-                  <h5>CHappy Clients</h5>
+                  <h5>Mutlu Müşteriler</h5>
                   <p className="font-sm color-text-paragraph mt-10">
-                    We always provide people a <br className="d-none d-lg-block" />
-                    complete solution upon focused of <br className="d-none d-lg-block" />
-                    any business
+                    Her zaman insanlara <br className="d-none d-lg-block" />
+                    odaklanmış, eksiksiz çözümler <br className="d-none d-lg-block" />
+                    sunuyoruz
                   </p>
                 </div>
               </div>
@@ -469,8 +466,8 @@ export default function Home() {
         <section className="section-box mt-50">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Top Recruiters</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Discover your next career move, freelance gig, or internship</p>
+              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Önde Gelen Kurumlar</h2>
+              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Bir sonraki kariyer adımını, serbest çalışma fırsatını veya stajını keşfet</p>
             </div>
           </div>
           <div className="container">
@@ -482,8 +479,8 @@ export default function Home() {
         <section className="section-box mt-50">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Jobs by Location</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Find your favourite jobs and get the benefits of yourself</p>
+              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Konuma Göre Burslar</h2>
+              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Favori burslarını bul ve kendi avantajlarını elde et</p>
             </div>
           </div>
           <div className="container">
@@ -492,7 +489,7 @@ export default function Home() {
                 <div className="card-image-top hover-up">
                   <Link href="/jobs-grid">
                     <div className="image" style={{ backgroundImage: "url(assets/imgs/page/homepage1/location1.png)" }}>
-                      <span className="lbl-hot">Hot</span>
+                      <span className="lbl-hot">Popüler</span>
                     </div>
                   </Link>
 
@@ -503,10 +500,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">5 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">5 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">120 companies</span>
+                        <span className="color-text-paragraph-2 text-14">120 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -516,7 +513,7 @@ export default function Home() {
                 <div className="card-image-top hover-up">
                   <Link href="/jobs-grid">
                     <div className="image" style={{ backgroundImage: "url(assets/imgs/page/homepage1/location2.png)" }}>
-                      <span className="lbl-hot">Trending</span>
+                      <span className="lbl-hot">Trend</span>
                     </div>
                   </Link>
 
@@ -527,10 +524,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">7 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">7 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">68 companies</span>
+                        <span className="color-text-paragraph-2 text-14">68 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -540,7 +537,7 @@ export default function Home() {
                 <div className="card-image-top hover-up">
                   <Link href="/jobs-grid">
                     <div className="image" style={{ backgroundImage: "url(assets/imgs/page/homepage1/location3.png)" }}>
-                      <span className="lbl-hot">Hot</span>
+                      <span className="lbl-hot">Popüler</span>
                     </div>
                   </Link>
 
@@ -551,10 +548,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">9 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">9 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">80 companies</span>
+                        <span className="color-text-paragraph-2 text-14">80 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -573,10 +570,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">16 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">16 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">86 companies</span>
+                        <span className="color-text-paragraph-2 text-14">86 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -595,10 +592,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">39 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">39 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">186 companies</span>
+                        <span className="color-text-paragraph-2 text-14">186 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -617,10 +614,10 @@ export default function Home() {
 
                     <div className="row">
                       <div className="col-lg-6 col-6">
-                        <span className="text-14 color-text-paragraph-2">15 Vacancy</span>
+                        <span className="text-14 color-text-paragraph-2">15 Boş Pozisyon</span>
                       </div>
                       <div className="col-lg-6 col-6 text-end">
-                        <span className="color-text-paragraph-2 text-14">632 companies</span>
+                        <span className="color-text-paragraph-2 text-14">632 kurumlar</span>
                       </div>
                     </div>
                   </div>
@@ -632,8 +629,8 @@ export default function Home() {
         <section className="section-box mt-50 mb-50">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">News and Blog</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Get the latest news, updates and tips</p>
+              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Haberler ve Blog</h2>
+              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">En son haberler, güncellemeler ve ipuçlarını al</p>
             </div>
           </div>
           <div className="container">
@@ -644,7 +641,7 @@ export default function Home() {
 
               <div className="text-center">
                 <Link href="/blog-grid">
-                  <span className="btn btn-brand-1 btn-icon-load mt--30 hover-up">Load More Posts</span>
+                  <span className="btn btn-brand-1 btn-icon-load mt--30 hover-up">Daha Fazla Gönderi Yükle</span>
                 </Link>
               </div>
             </div>
@@ -659,13 +656,13 @@ export default function Home() {
                 </div>
                 <div className="col-lg-12 col-xl-6 col-12">
                   <h2 className="text-md-newsletter text-center">
-                    New Things Will Always
-                    <br /> Update Regularly
+                    Yeni Şeyler Her Zaman
+                    <br /> Düzenli Olarak Güncellenir
                   </h2>
                   <div className="box-form-newsletter mt-40">
                     <form className="form-newsletter">
-                      <input className="input-newsletter" type="text" placeholder="Enter your email here" />
-                      <button className="btn btn-default font-heading icon-send-letter">Subscribe</button>
+                      <input className="input-newsletter" type="text" placeholder="E-posta adresinizi buraya girin" />
+                      <button className="btn btn-default font-heading icon-send-letter">Abone Ol</button>
                     </form>
                   </div>
                 </div>

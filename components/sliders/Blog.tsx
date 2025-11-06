@@ -42,10 +42,10 @@ const BlogSlider = () => {
                   </div>
                   <h5>
                     <Link href="/blog-grid">
-                      <span>21 Job Interview Tips: How To Make a Great Impression</span>
+                      <span>21 Burs Mülakatı İpuçları: Harika Bir İzlenim Bırakmanın Yolları</span>
                     </Link>
                   </h5>
-                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                   <div className="card-2-bottom mt-20">
                     <div className="row">
                       <div className="col-lg-6 col-6">
@@ -87,10 +87,10 @@ const BlogSlider = () => {
                   </div>
                   <h5>
                     <Link href="/blog-grid">
-                      <span>39 Strengths and Weaknesses To Discuss in a Job Interview</span>
+                      <span>39 Burs Mülakatında Tartışılacak Güçlü ve Zayıf Yönler</span>
                     </Link>
                   </h5>
-                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                   <div className="card-2-bottom mt-20">
                     <div className="row">
                       <div className="col-lg-6 col-6">
@@ -178,10 +178,10 @@ const BlogSlider = () => {
                   </div>
                   <h5>
                     <Link href="/blog-grid">
-                      <span>21 Job Interview Tips: How To Make a Great Impression</span>
+                      <span>21 Burs Mülakatı İpuçları: Harika Bir İzlenim Bırakmanın Yolları</span>
                     </Link>
                   </h5>
-                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                   <div className="card-2-bottom mt-20">
                     <div className="row">
                       <div className="col-lg-6 col-6">
@@ -223,10 +223,10 @@ const BlogSlider = () => {
                   </div>
                   <h5>
                     <Link href="/blog-grid">
-                      <span>39 Strengths and Weaknesses To Discuss in a Job Interview</span>
+                      <span>39 Burs Mülakatında Tartışılacak Güçlü ve Zayıf Yönler</span>
                     </Link>
                   </h5>
-                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                  <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                   <div className="card-2-bottom mt-20">
                     <div className="row">
                       <div className="col-lg-6 col-6">

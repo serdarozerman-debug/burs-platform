@@ -23,7 +23,7 @@ export default function JobDetails() {
                 </div>
                 <div className="col-lg-4 col-md-12 text-lg-end">
                   <div className="btn btn-apply-icon btn-apply btn-apply-big hover-up" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                    Apply now
+                    Başvur
                   </div>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export default function JobDetails() {
                           <img src="assets/imgs/page/job-single/job-level.svg" alt="jobBox" />
                         </div>
                         <div className="sidebar-text-info ml-10">
-                          <span className="text-description joblevel-icon mb-10">Job level</span>
+                          <span className="text-description joblevel-icon mb-10">Burs Seviyesi</span>
                           <strong className="small-heading">Experienced (Non - Manager)</strong>
                         </div>
                       </div>
@@ -62,7 +62,7 @@ export default function JobDetails() {
                           <img src="assets/imgs/page/job-single/salary.svg" alt="jobBox" />
                         </div>
                         <div className="sidebar-text-info ml-10">
-                          <span className="text-description salary-icon mb-10">Salary</span>
+                          <span className="text-description salary-icon mb-10">Burs Miktarı</span>
                           <strong className="small-heading">$800 - $1000</strong>
                         </div>
                       </div>
@@ -82,7 +82,7 @@ export default function JobDetails() {
                           <img src="assets/imgs/page/job-single/job-type.svg" alt="jobBox" />
                         </div>
                         <div className="sidebar-text-info ml-10">
-                          <span className="text-description jobtype-icon mb-10">Job type</span>
+                          <span className="text-description jobtype-icon mb-10">Burs Tipi</span>
                           <strong className="small-heading">Permanent</strong>
                         </div>
                       </div>
@@ -120,7 +120,7 @@ export default function JobDetails() {
                   <div className="content-single">
                     <h4>Welcome to AliStudio Team</h4>
                     <p>The AliStudio Design team has a vision to establish a trusted platform that enables productive and healthy enterprises in a world of digital and remote everything, constantly changing work patterns and norms, and the need for organizational resiliency.</p>
-                    <p>The ideal candidate will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This candidate will have experiences in working with numerous different design platforms such as digital and print forms.</p>
+                    <p>The ideal öğrenci will have strong creative skills and a portfolio of work which demonstrates their passion for illustrative design and typography. This öğrenci will have experiences in working with numerous different design platforms such as digital and print forms.</p>
                     <h4>Essential Knowledge, Skills, and Experience</h4>
                     <ul>
                       <li>A portfolio demonstrating well thought through and polished end to end customer journeys</li>
@@ -160,11 +160,11 @@ export default function JobDetails() {
                     <div className="row align-items-center">
                       <div className="col-md-5">
                         <Link href="#">
-                          <span className="btn btn-default mr-15">Apply now</span>
+                          <span className="btn btn-default mr-15">Başvur</span>
                         </Link>
 
                         <Link href="#">
-                          <span className="btn btn-border">Save job</span>
+                          <span className="btn btn-border">Save burs</span>
                         </Link>
                       </div>
                       <div className="col-md-7 text-lg-end social-share">
@@ -207,7 +207,7 @@ export default function JobDetails() {
                           <span className="sidebar-company">AliThemes</span>
                           <span className="card-location">New York, US</span>
                           <Link href="#">
-                            <span className="link-underline mt-15">02 Open Jobs</span>
+                            <span className="link-underline mt-15">02 Open Burslar</span>
                           </Link>
                         </div>
                       </div>
@@ -224,7 +224,7 @@ export default function JobDetails() {
                     </div>
                   </div>
                   <div className="sidebar-border">
-                    <h6 className="f-18">Similar jobs</h6>
+                    <h6 className="f-18">Benzer burslar</h6>
                     <div className="sidebar-list-job">
                       <ul>
                         <li>
@@ -533,7 +533,7 @@ export default function JobDetails() {
           <section className="section-box mt-50 mb-50">
             <div className="container">
               <div className="text-left">
-                <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Featured Jobs</h2>
+                <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Öne Çıkan Burslar</h2>
                 <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Get the latest news, updates and tips</p>
               </div>
               <div className="mt-50">

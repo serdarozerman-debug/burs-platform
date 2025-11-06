@@ -12,7 +12,7 @@ export default function JobGrid() {
               <div className="banner-hero banner-single banner-single-bg">
                 <div className="block-banner text-center">
                   <h3 className="wow animate__animated animate__fadeInUp">
-                    <span className="color-brand-2">22 Jobs</span> Available Now
+                    <span className="color-brand-2">22 Burslar</span> Available Now
                   </h3>
                   <div className="font-sm color-text-paragraph-2 mt-10 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero repellendus magni, <br className="d-none d-xl-block" />
@@ -297,7 +297,7 @@ export default function JobGrid() {
                       <div className="row">
                         <div className="col-xl-6 col-lg-5">
                           <span className="text-small text-showing">
-                            Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
+                            Showing <strong>41-60 </strong>of <strong>944 </strong>burslar
                           </span>
                         </div>
                         <div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">
@@ -420,7 +420,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -472,7 +472,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -528,7 +528,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -580,7 +580,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -628,7 +628,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -680,7 +680,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -732,7 +732,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -788,7 +788,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -844,7 +844,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -896,7 +896,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -952,7 +952,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1004,7 +1004,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1052,7 +1052,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1104,7 +1104,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1156,7 +1156,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1212,7 +1212,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1268,7 +1268,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>
@@ -1320,7 +1320,7 @@ export default function JobGrid() {
                                 </div>
                                 <div className="col-lg-5 col-5 text-end">
                                   <div className="btn btn-apply-now" data-bs-toggle="modal" data-bs-target="#ModalApplyJobForm">
-                                    Apply now
+                                    Başvur
                                   </div>
                                 </div>
                               </div>

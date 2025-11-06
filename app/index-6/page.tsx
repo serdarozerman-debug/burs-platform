@@ -22,7 +22,7 @@ export default function Index6() {
                         <br className="d-none d-lg-block" />
                         Here For you!
                       </h1>
-                      <p className="font-lg color-text-paragraph mt-20">Find Jobs, Employment &amp; Career Opportunities</p>
+                      <p className="font-lg color-text-paragraph mt-20">Bursları Bul, İstihdam &amp; Kariyer Fırsatları</p>
                     </div>
                   </div>
                 </div>
@@ -414,11 +414,11 @@ export default function Index6() {
                     <p className="font-md color-text-paragraph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec justo a quam varius maximus. Maecenas sodales tortor quis tincidunt commodo.</p>
                   </div>
                   <div className="box-checkbox mb-30">
-                    <h6>Search for Jobs</h6>
+                    <h6>Bursları Ara</h6>
                     <p className="font-md color-text-paragraph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec justo a quam varius maximus. Maecenas sodales tortor quis tincidunt commodo.</p>
                   </div>
                   <div className="box-checkbox mb-30">
-                    <h6>Save &amp; Apply</h6>
+                    <h6>Kaydet &amp; Başvur</h6>
                     <p className="font-md color-text-paragraph-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec nec justo a quam varius maximus. Maecenas sodales tortor quis tincidunt commodo.</p>
                   </div>
                 </div>

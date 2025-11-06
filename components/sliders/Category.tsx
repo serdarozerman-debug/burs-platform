@@ -106,7 +106,7 @@ const CategorySlider = () => {
                         <h4>{item.title}</h4>
                         <p className="font-xs">
                           {item.count}
-                          <span> Jobs Available</span>
+                          <span> Burslar Mevcut</span>
                         </p>
                       </div>
                     </div>

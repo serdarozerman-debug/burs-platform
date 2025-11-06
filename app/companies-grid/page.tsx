@@ -12,7 +12,7 @@ export default function CompaniesGrid() {
             <div className="container">
               <div className="banner-hero banner-company">
                 <div className="block-banner text-center">
-                  <h3 className="wow animate__animated animate__fadeInUp">Browse Companies</h3>
+                  <h3 className="wow animate__animated animate__fadeInUp">Kurumları İncele</h3>
                   <div className="font-sm color-text-paragraph-2 mt-10 wow animate__animated animate__fadeInUp" data-wow-delay=".1s">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero repellendus magni, <br className="d-none d-xl-block" />
                     atque delectus molestias quis?
@@ -164,7 +164,7 @@ export default function CompaniesGrid() {
                       <div className="row">
                         <div className="col-xl-6 col-lg-5">
                           <span className="text-small text-showing">
-                            Showing <strong>41-60 </strong>of <strong>944 </strong>jobs
+                            Showing <strong>41-60 </strong>of <strong>944 </strong>burslar
                           </span>
                         </div>
                         <div className="col-xl-6 col-lg-7 text-lg-end mt-sm-15">
@@ -271,7 +271,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>12</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -310,7 +310,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>25</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -349,7 +349,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>54</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -388,7 +388,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>6</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -427,7 +427,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>67</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -466,7 +466,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>45</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -505,7 +505,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>64</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -544,7 +544,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>87</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -583,7 +583,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>23</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -622,7 +622,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>45</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -661,7 +661,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>67</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -700,7 +700,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>53</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -739,7 +739,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>56</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -778,7 +778,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>66</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -817,7 +817,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>12</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -856,7 +856,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>12</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -895,7 +895,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>25</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -934,7 +934,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>54</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -973,7 +973,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>6</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -1012,7 +1012,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>67</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>
@@ -1051,7 +1051,7 @@ export default function CompaniesGrid() {
                               <Link href="/jobs-grid">
                                 <span className="btn btn-grey-big">
                                   <span>45</span>
-                                  <span> Jobs Open</span>
+                                  <span> Burslar Açık</span>
                                 </span>
                               </Link>
                             </div>

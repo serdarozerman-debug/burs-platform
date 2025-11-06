@@ -58,7 +58,7 @@ export default function BlogGrid() {
                       <span>
                         <div className="box-cover-img">
                           <div className="content-bottom">
-                            <h3 className="color-white mb-20">Recruiter and Land Your Dream Job</h3>
+                            <h3 className="color-white mb-20">İşveren Bul ve Hayalinizdeki Bursu Bul</h3>
                             <div className="author d-flex align-items-center mr-20">
                               <img className="mr-10" alt="jobBox" src="assets/imgs/page/candidates/user1.png" />
                               <span className="color-white font-sm mr-25">Thompson</span>
@@ -76,7 +76,7 @@ export default function BlogGrid() {
                       <span>
                         <div className="box-cover-img">
                           <div className="content-bottom">
-                            <h3 className="color-white mb-20">Work-From-Home Jobs That Pay Well</h3>
+                            <h3 className="color-white mb-20">İyi Ödenen Evden Çalışma Bursları</h3>
                             <div className="author d-flex align-items-center mr-20">
                               <img className="mr-10" alt="jobBox" src="assets/imgs/page/blog/ava_1.png" />
                               <span className="color-white font-sm mr-25">Alice Json</span>
@@ -120,10 +120,10 @@ export default function BlogGrid() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>21 Job Interview Tips: How To Make a Great Impression</span>
+                                <span>21 Burs Mülakatı İpuçları: Harika Bir İzlenim Bırakmanın Yolları</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -166,7 +166,7 @@ export default function BlogGrid() {
                                 <span>Email Examples: How To Respond to Employer Interview Requests</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -209,7 +209,7 @@ export default function BlogGrid() {
                                 <span>How To Write an Application Letter (With Examples)</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -249,10 +249,10 @@ export default function BlogGrid() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>17 jobs hired at 15 (and even 14) you should know</span>
+                                <span>15 (ve hatta 14) yaşında işe alınan 17 burslar hakkında bilmeniz gerekenler</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -295,7 +295,7 @@ export default function BlogGrid() {
                                 <span>How To Write a Cover Letter (Plus Tips and Examples)</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -338,7 +338,7 @@ export default function BlogGrid() {
                                 <span>10 Best Skills To Include on a Resume in 2022</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -378,10 +378,10 @@ export default function BlogGrid() {
                             </div>
                             <h5>
                               <Link href="blog-details">
-                                <span>39 Strengths and Weaknesses To Discuss in a Job Interview</span>
+                                <span>39 Burs Mülakatında Tartışılacak Güçlü ve Zayıf Yönler</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -424,7 +424,7 @@ export default function BlogGrid() {
                                 <span>List of Weaknesses: 10 Things To Say in an Interview</span>
                               </Link>
                             </h5>
-                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare company by creating high-quality healthcare products in iconic, sustainable packaging.</p>
+                            <p className="mt-10 color-text-paragraph font-sm">Our mission is to create the world&amp;rsquo;s most sustainable healthcare kurum by creating high-quality healthcare products in iconic, sustainable packaging.</p>
                             <div className="card-2-bottom mt-20">
                               <div className="row">
                                 <div className="col-lg-6 col-6">
@@ -532,7 +532,7 @@ export default function BlogGrid() {
                           </figure>
                           <div className="content">
                             <h5>
-                              <a href="/blog-details">How To Create a Resume for a Job in Social</a>
+                              <a href="/blog-details">Sosyal Medyada Burs için Özgeçmiş Nasıl Oluşturulur</a>
                             </h5>
                             <div className="post-meta text-muted d-flex align-items-center mb-15">
                               <div className="author d-flex align-items-center mr-20">
@@ -596,7 +596,7 @@ export default function BlogGrid() {
                           <div className="content">
                             <h5>
                               {" "}
-                              <a href="/blog-details">How to Land Your Dream Marketing Job</a>
+                              <a href="/blog-details">Hayalinizdeki Pazarlama Bursunu Nasıl Bulursunuz</a>
                             </h5>
                             <div className="post-meta text-muted d-flex align-items-center mb-15">
                               <div className="author d-flex align-items-center mr-20">
