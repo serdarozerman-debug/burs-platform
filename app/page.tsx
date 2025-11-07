@@ -1,12 +1,43 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
+import { useState, useEffect } from "react";
 import Layout from "@/components/Layout/Layout";
 import CategorySlider from "@/components/sliders/Category";
 import TopRekruterSlider from "@/components/sliders/TopRekruter";
 import BlogSlider from "@/components/sliders/Blog";
 import CategoryTab from "@/components/elements/CategoryTab";
 import Link from "next/link";
+import { Scholarship } from "@/lib/supabase";
 
 export default function Home() {
+  const [scholarships, setScholarships] = useState<Scholarship[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchScholarships = async () => {
+      try {
+        const response = await fetch("/api/scholarships");
+        if (!response.ok) throw new Error("Failed to fetch scholarships");
+        const data = await response.json();
+        setScholarships(data);
+      } catch (error) {
+        console.error("Error fetching scholarships:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchScholarships();
+  }, []);
+
+  const formatDate = (dateString: string) => {
+    const date = new Date(dateString);
+    const months = [
+      "Ocak", "Şubat", "Mart", "Nisan", "Mayıs", "Haziran",
+      "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
+    ];
+    return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  };
   return (
     <>
       <Layout>
@@ -358,12 +389,78 @@ export default function Home() {
         <section className="section-box mt-50">
           <div className="container">
             <div className="text-center">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Günün Bursları</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">Doğru öğrencilerle hızlıca buluş ve bağlantı kur. </p>
+              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Popüler Burslar</h2>
+              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">En çok aranan burs fırsatlarını keşfet</p>
             </div>
-            <div className="mt-70">
-              <CategoryTab />
-            </div>
+            {loading ? (
+              <div className="text-center mt-50">
+                <div className="spinner-border text-primary" role="status">
+                  <span className="visually-hidden">Yükleniyor...</span>
+                </div>
+                <p className="mt-20">Burslar yükleniyor...</p>
+              </div>
+            ) : scholarships.length > 0 ? (
+              <div className="row mt-50">
+                {scholarships.map((scholarship) => (
+                  <div key={scholarship.id} className="col-lg-4 col-md-6 col-sm-12 mb-30">
+                    <div className="card-grid-2 hover-up wow animate__animated animate__fadeIn">
+                      <div className="card-grid-2-image-left">
+                        <div className="image-box">
+                          {scholarship.organization_logo ? (
+                            <img src={scholarship.organization_logo} alt={scholarship.organization} className="img-responsive" style={{ maxHeight: "60px", objectFit: "contain" }} />
+                          ) : (
+                            <div className="bg-light d-flex align-items-center justify-content-center" style={{ width: "60px", height: "60px", borderRadius: "8px" }}>
+                              <span className="font-bold color-brand-2">{scholarship.organization.charAt(0)}</span>
+                            </div>
+                          )}
+                        </div>
+                        <div className="right-info">
+                          <span className="name-job">{scholarship.organization}</span>
+                        </div>
+                      </div>
+                      <div className="card-block-info">
+                        <h6>
+                          <span>{scholarship.title}</span>
+                        </h6>
+                        <div className="mt-5">
+                          <span className="card-briefcase">{scholarship.type}</span>
+                          <span className="card-time">
+                            <span>Son Başvuru: {formatDate(scholarship.deadline)}</span>
+                          </span>
+                        </div>
+                        <div className="mt-15">
+                          <span className="card-text-price">{scholarship.amount.toLocaleString("tr-TR")}</span>
+                          <span className="text-muted"> {scholarship.amount_type}</span>
+                        </div>
+                        <p className="font-sm color-text-paragraph mt-15">
+                          {scholarship.description.length > 100
+                            ? `${scholarship.description.substring(0, 100)}...`
+                            : scholarship.description}
+                        </p>
+                        <div className="card-2-bottom mt-30">
+                          <div className="row">
+                            <div className="col-12 text-end">
+                              <a
+                                href={scholarship.application_url}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="btn btn-apply-now"
+                              >
+                                Başvur
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="text-center mt-50">
+                <p className="font-lg color-text-paragraph-2">Henüz burs bulunmamaktadır.</p>
+              </div>
+            )}
           </div>
         </section>
         <section className="section-box overflow-visible mt-100 mb-100">
