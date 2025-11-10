@@ -246,9 +246,9 @@ export default function Home() {
 
                         // Favicon URL: Önce database'den, yoksa Google Favicon Service
                         const getFaviconUrl = () => {
-                          // Önce organization_logo kontrol et
-                          if (scholarship.organization_logo) {
-                            return scholarship.organization_logo;
+                          // Önce organization logo_url kontrol et
+                          if (scholarship.organization?.logo_url) {
+                            return scholarship.organization.logo_url;
                           }
                           
                           // Eğer database'de yoksa, hiç favicon deneme, direkt initial göster
@@ -266,7 +266,7 @@ export default function Home() {
                                     <>
                                       <img 
                                         src={faviconUrl} 
-                                        alt={scholarship.organization}
+                                        alt={scholarship.organization?.name || 'Organization'}
                                         style={{ width: "60px", height: "60px", objectFit: "contain" }}
                                         onError={(e) => {
                                           // Favicon yüklenemezse gradient arka plana geç
@@ -294,7 +294,7 @@ export default function Home() {
                                           boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)"
                                         }}
                                       >
-                                        {(scholarship.organization || 'K').charAt(0)}
+                                        {(scholarship.organization?.name || 'K').charAt(0)}
                                       </div>
                                     </>
                                   ) : (
@@ -316,7 +316,7 @@ export default function Home() {
                                   )}
                                 </div>
                                 <div className="right-info">
-                                  <span className="name-job">{scholarship.organization || 'Kurum'}</span>
+                                  <span className="name-job">{scholarship.organization?.name || 'Kurum'}</span>
                                   <span className="location-small">İstanbul, TR</span>
                                 </div>
                               </div>

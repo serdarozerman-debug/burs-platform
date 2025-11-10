@@ -23,17 +23,25 @@ export async function GET(request: NextRequest) {
       .select('*', { count: 'exact', head: true })
       .eq('is_active', true)
     
-    // Data query
+    // Data query - with organization join
     let query = supabase
       .from('scholarships')
-      .select('*')
+      .select(`
+        *,
+        organization:organization_id (
+          id,
+          name,
+          logo_url,
+          website
+        )
+      `)
       .eq('is_active', true)
 
     // Filtreleri hem count hem data query'sine uygula
     const applyFilters = (q: any) => {
       // Search filtresi
       if (search) {
-        q = q.or(`title.ilike.%${search}%,organization.ilike.%${search}%`)
+        q = q.ilike('title', `%${search}%`)
       }
 
       // Type filtresi

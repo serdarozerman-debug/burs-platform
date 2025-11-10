@@ -8,8 +8,14 @@ export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 export type Scholarship = {
   id: string
   title: string
-  organization: string
-  organization_logo: string | null
+  slug: string
+  organization_id: string
+  organization?: {
+    id: string
+    name: string
+    logo_url: string | null
+    website: string
+  }
   amount: number
   amount_type: string
   deadline: string
@@ -18,6 +24,7 @@ export type Scholarship = {
   education_level: string
   application_url: string
   is_active: boolean
+  is_published?: boolean
   has_api_integration?: boolean
   created_at: string
 }
