@@ -10,8 +10,10 @@
     "sass": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.80.0",
     "next": "15.3.3",
+    "openai": "^6.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-perfect-scrollbar": "^1.5.8",
