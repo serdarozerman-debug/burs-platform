@@ -1,0 +1,109 @@
+name: 🎓 Scrape Scholarships
+
+# Burs scraping - 5 günde bir
+on:
+  schedule:
+    # Her 5 günde bir (ayda 6 kez: 1, 6, 11, 16, 21, 26. günler, saat 02:00 UTC)
+    - cron: '0 2 1,6,11,16,21,26 * *'
+  
+  # Manuel çalıştırma için
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Maximum number of organizations to scrape'
+        required: false
+        default: '50'
+      scraper_type:
+        description: 'Scraper type'
+        required: true
+        default: 'non-universities'
+        type: choice
+        options:
+          - 'non-universities'
+          - 'all'
+          - 'advanced'
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+          cache: 'pip'
+
+      - name: 📦 Install dependencies
+        run: |
+          cd scripts
+          pip install -r requirements.txt
+
+      - name: 🤖 Run scholarship scraper
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          cd scripts
+          
+          # Determine which scraper to run
+          SCRAPER_TYPE="${{ github.event.inputs.scraper_type || 'non-universities' }}"
+          LIMIT="${{ github.event.inputs.limit || '50' }}"
+          
+          case $SCRAPER_TYPE in
+            "advanced")
+              echo "🚀 Running advanced scraper (AI-powered)..."
+              python3 advanced_scraper.py --limit $LIMIT
+              ;;
+            "all")
+              echo "🚀 Running all organizations scraper..."
+              python3 scrape_all_organizations.py --limit $LIMIT
+              ;;
+            *)
+              echo "🚀 Running non-universities scraper..."
+              python3 scrape_non_universities.py --limit $LIMIT
+              ;;
+          esac
+
+      - name: 📊 Generate report
+        if: always()
+        run: |
+          cd scripts
+          
+          echo "=== SCRAPING REPORT ===" > scraping_report.txt
+          echo "Date: $(date)" >> scraping_report.txt
+          echo "Type: ${{ github.event.inputs.scraper_type || 'non-universities' }}" >> scraping_report.txt
+          echo "" >> scraping_report.txt
+          
+          # Count results
+          if [ -f "scraper_output.log" ]; then
+            echo "Logs:" >> scraping_report.txt
+            tail -50 scraper_output.log >> scraping_report.txt
+          fi
+
+      - name: 📤 Upload report as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: scraping-report-${{ github.run_number }}
+          path: scripts/scraping_report.txt
+          retention-days: 30
+
+      - name: 🔔 Notify completion
+        if: always()
+        run: |
+          echo "✅ Scholarship scraping completed!"
+          echo "Status: ${{ job.status }}"
+          echo "Run number: ${{ github.run_number }}"
+
+      - name: 🧹 Cleanup duplicates (optional)
+        if: success()
+        run: |
+          cd scripts
+          python3 cleanup_duplicates.py || echo "Cleanup script not found or failed"
+

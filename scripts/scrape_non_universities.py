@@ -223,7 +223,9 @@ def save_to_database(scholarships: list):
 
 def load_organizations():
     """organizations.json'dan kurumları yükle"""
-    with open('scripts/organizations.json', 'r', encoding='utf-8') as f:
+    script_dir = os.path.dirname(__file__)
+    org_file = os.path.join(script_dir, 'organizations.json')
+    with open(org_file, 'r', encoding='utf-8') as f:
         return json.load(f)
 
 
