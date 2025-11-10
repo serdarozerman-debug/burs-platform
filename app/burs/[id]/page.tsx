@@ -91,12 +91,12 @@ export default function ScholarshipDetailPage() {
                 <div className="card-grid-2 hover-up mb-40">
                   <div className="card-grid-2-image-left">
                     <div className="image-box">
-                      {scholarship.organization_logo ? (
-                        <img src={scholarship.organization_logo} alt={scholarship.organization} />
+                      {scholarship.organization?.logo_url ? (
+                        <img src={scholarship.organization.logo_url} alt={scholarship.organization.name} />
                       ) : (
                         <div style={{ 
-                          width: "80px", 
-                          height: "80px", 
+                          width: "80px",
+                          height: "80px",
                           background: "linear-gradient(135deg, #3b82f6 0%, #2563eb 100%)",
                           borderRadius: "16px",
                           display: "flex",
@@ -107,12 +107,12 @@ export default function ScholarshipDetailPage() {
                           fontWeight: "bold",
                           boxShadow: "0 4px 6px -1px rgb(0 0 0 / 0.1)"
                         }}>
-                          {scholarship.organization.charAt(0)}
+                          {(scholarship.organization?.name || 'K').charAt(0)}
                         </div>
                       )}
                     </div>
                     <div className="right-info">
-                      <span className="name-job">{scholarship.organization}</span>
+                      <span className="name-job">{scholarship.organization?.name || 'Kurum'}</span>
                       <span className="location-small">İstanbul, TR</span>
                     </div>
                   </div>
@@ -177,7 +177,7 @@ export default function ScholarshipDetailPage() {
                             </div>
                             <div className="sidebar-text-info">
                               <span className="text-description">Kurum</span>
-                              <strong className="small-heading">{scholarship.organization}</strong>
+                              <strong className="small-heading">{scholarship.organization?.name || 'Kurum'}</strong>
                             </div>
                           </li>
                           <li>

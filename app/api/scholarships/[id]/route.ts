@@ -1,33 +1,61 @@
-import { NextRequest, NextResponse } from 'next/server'
-import { supabase } from '@/lib/supabase'
+import { NextRequest, NextResponse } from 'next/server';
+import { supabase } from '@/lib/supabase';
 
+// GET single scholarship by ID
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
 ) {
   try {
-    const { data, error } = await supabase
-      .from('scholarships')
-      .select('*')
-      .eq('id', params.id)
-      .eq('is_active', true)
-      .single()
+    const { id } = params;
 
-    if (error) {
-      console.error('Supabase error:', error)
+    if (!id) {
       return NextResponse.json(
-        { error: 'Burs bulunamadı' },
-        { status: 404 }
-      )
+        { error: 'Scholarship ID required' },
+        { status: 400 }
+      );
     }
 
-    return NextResponse.json(data)
+    // Fetch scholarship with organization JOIN
+    const { data, error } = await supabase
+      .from('scholarships')
+      .select(`
+        *,
+        organization:organization_id (
+          id,
+          name,
+          logo_url,
+          website,
+          type,
+          description
+        )
+      `)
+      .eq('id', id)
+      .eq('is_active', true)
+      .single();
+
+    if (error) {
+      console.error('Supabase error:', error);
+      return NextResponse.json(
+        { error: 'Scholarship not found' },
+        { status: 404 }
+      );
+    }
+
+    if (!data) {
+      return NextResponse.json(
+        { error: 'Scholarship not found' },
+        { status: 404 }
+      );
+    }
+
+    // Return scholarship data
+    return NextResponse.json(data);
   } catch (error) {
-    console.error('API error:', error)
+    console.error('API error:', error);
     return NextResponse.json(
       { error: 'Internal server error' },
       { status: 500 }
-    )
+    );
   }
 }
-
