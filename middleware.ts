@@ -37,9 +37,11 @@ export async function middleware(req: NextRequest) {
   } = await supabase.auth.getSession();
 
   // Public routes (no auth required)
-  const publicRoutes = ['/', '/login', '/register', '/burs'];
+  const publicRoutes = ['/', '/login', '/burs'];
   const isPublicRoute = publicRoutes.some(route => 
-    req.nextUrl.pathname === route || req.nextUrl.pathname.startsWith('/burs/')
+    req.nextUrl.pathname === route || 
+    req.nextUrl.pathname.startsWith('/burs/') ||
+    req.nextUrl.pathname.startsWith('/register/')  // All register routes public
   );
 
   // If trying to access protected route without session

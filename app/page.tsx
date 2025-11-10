@@ -377,7 +377,8 @@ export default function Home() {
                     </div>
 
                     {/* Pagination */}
-                    {totalPages > 1 && (
+                    {/* Pagination - Her zaman göster (totalCount > ITEMS_PER_PAGE ise) */}
+                    {totalCount > ITEMS_PER_PAGE && (
                       <div className="flex justify-center items-center gap-2 mt-12 mb-8">
                         {/* Önceki Butonu */}
                         <button
@@ -388,12 +389,35 @@ export default function Home() {
                           ← Önceki
                         </button>
 
-                        {/* Sayfa Numaraları */}
+                        {/* Sayfa Numaraları - Max 10 sayfa göster */}
                         <div className="flex gap-2">
-                          {Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => (
+                          {/* İlk sayfa */}
+                          {currentPage > 3 && (
+                            <>
+                              <button
+                                onClick={() => setCurrentPage(1)}
+                                className="w-12 h-12 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:bg-gray-50"
+                              >
+                                1
+                              </button>
+                              {currentPage > 4 && <span className="px-2 py-3">...</span>}
+                            </>
+                          )}
+
+                          {/* Mevcut sayfa civarı (max 5 sayfa) */}
+                          {Array.from({ length: Math.min(totalPages, 10) }, (_, i) => {
+                            const pageNum = i + 1;
+                            // Sadece mevcut sayfaya yakın olanları göster
+                            if (totalPages <= 10) {
+                              return pageNum;
+                            } else if (pageNum >= currentPage - 2 && pageNum <= currentPage + 2) {
+                              return pageNum;
+                            }
+                            return null;
+                          }).filter(Boolean).map(pageNum => (
                             <button
                               key={pageNum}
-                              onClick={() => setCurrentPage(pageNum)}
+                              onClick={() => setCurrentPage(pageNum!)}
                               className={`w-12 h-12 rounded-lg font-semibold transition-all ${
                                 currentPage === pageNum
                                   ? 'bg-blue-600 text-white shadow-lg scale-110'
@@ -403,16 +427,60 @@ export default function Home() {
                               {pageNum}
                             </button>
                           ))}
+
+                          {/* Son sayfa */}
+                          {totalPages > 10 && currentPage < totalPages - 2 && (
+                            <>
+                              {currentPage < totalPages - 3 && <span className="px-2 py-3">...</span>}
+                              <button
+                                onClick={() => setCurrentPage(totalPages)}
+                                className="w-12 h-12 rounded-lg font-semibold border-2 border-gray-300 text-gray-700 hover:bg-gray-50"
+                              >
+                                {totalPages}
+                              </button>
+                            </>
+                          )}
+
+                          {/* 10+ sayfa uyarısı */}
+                          {totalPages > 10 && currentPage >= totalPages - 2 && (
+                            <div className="ml-3 text-sm text-gray-600">
+                              Sayfa {totalPages} / {totalPages > 10 ? '10+ (max)' : totalPages}
+                            </div>
+                          )}
                         </div>
 
                         {/* Sonraki Butonu */}
                         <button
-                          onClick={() => setCurrentPage(prev => Math.min(totalPages, prev + 1))}
-                          disabled={currentPage === totalPages}
+                          onClick={() => setCurrentPage(prev => Math.min(Math.min(totalPages, 10), prev + 1))}
+                          disabled={currentPage === totalPages || currentPage === 10}
                           className="px-6 py-3 border-2 border-gray-300 rounded-lg font-medium text-gray-700 hover:bg-gray-50 disabled:opacity-40 disabled:cursor-not-allowed transition-all"
                         >
                           Sonraki →
                         </button>
+                      </div>
+                    )}
+
+                    {/* Load More Button (10. sayfadan sonra) */}
+                    {currentPage === 10 && totalPages > 10 && (
+                      <div className="text-center mt-8 mb-8">
+                        <div className="alert alert-info inline-block">
+                          <p className="mb-3">
+                            <strong>ℹ️ Daha fazla burs var!</strong>
+                            <br />
+                            Daha spesifik arama yapın veya filtreleri kullanın.
+                          </p>
+                          <div className="btn-group">
+                            <button
+                              onClick={() => {
+                                setFilters({ ...filters, search: "" });
+                                setCurrentPage(1);
+                              }}
+                              className="btn btn-outline-primary"
+                            >
+                              🔍 Filtreleri Kullan
+                            </button>
+                          </div>
+                        </div>
                       </div>
                     )}
                   </>
