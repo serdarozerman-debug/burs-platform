@@ -9,12 +9,15 @@ export async function GET(request: NextRequest) {
 
     let query = supabase
       .from("scholarships")
-      .select("organization, organization_logo")
+      .select(`
+        organization_id,
+        organization:organization_id (
+          id,
+          name,
+          logo_url
+        )
+      `)
       .eq("is_active", true);
-
-    if (missing) {
-      query = query.or("organization_logo.is.null,organization_logo.eq.");
-    }
 
     const { data, error } = await query;
 
@@ -22,13 +25,18 @@ export async function GET(request: NextRequest) {
 
     // Group by organization
     const organizations = new Map();
-    data?.forEach((item) => {
-      if (!organizations.has(item.organization)) {
-        organizations.set(item.organization, {
-          name: item.organization,
-          logo: item.organization_logo,
-          hasFavicon: !!(item.organization_logo && item.organization_logo.trim()),
-        });
+    data?.forEach((item: any) => {
+      if (item.organization && !organizations.has(item.organization.id)) {
+        const hasFavicon = !!(item.organization.logo_url && item.organization.logo_url.trim());
+        
+        if (!missing || !hasFavicon) {
+          organizations.set(item.organization.id, {
+            id: item.organization.id,
+            name: item.organization.name,
+            logo: item.organization.logo_url,
+            hasFavicon: hasFavicon,
+          });
+        }
       }
     });
 
@@ -52,27 +60,26 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { organization, favicon_url } = body;
+    const { organizationId, favicon_url } = body;
 
-    if (!organization || !favicon_url) {
+    if (!organizationId || !favicon_url) {
       return NextResponse.json(
-        { error: "Organization and favicon_url required" },
+        { error: "organizationId and favicon_url required" },
         { status: 400 }
       );
     }
 
-    // Update all scholarships from this organization
+    // Update organization logo
     const { data, error } = await supabase
-      .from("scholarships")
-      .update({ organization_logo: favicon_url })
-      .eq("organization", organization)
-      .eq("is_active", true);
+      .from("organizations")
+      .update({ logo_url: favicon_url })
+      .eq("id", organizationId);
 
     if (error) throw error;
 
     return NextResponse.json({
       success: true,
-      message: `Favicon updated for ${organization}`,
+      message: `Favicon updated`,
     });
   } catch (error: any) {
     console.error("Error updating favicon:", error);

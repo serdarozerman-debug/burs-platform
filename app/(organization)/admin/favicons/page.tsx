@@ -35,21 +35,21 @@ export default function FaviconManagement() {
     }
   };
 
-  const updateFavicon = async (organization: string, faviconUrl: string) => {
+  const updateFavicon = async (orgId: string, orgName: string, faviconUrl: string) => {
     setSaving(true);
     try {
       const response = await fetch("/api/admin/favicon", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          organization,
+          organizationId: orgId,
           favicon_url: faviconUrl,
         }),
       });
 
       if (!response.ok) throw new Error("Update failed");
 
-      alert(`✅ ${organization} için favicon güncellendi!`);
+      alert(`✅ ${orgName} için favicon güncellendi!`);
       setEditingOrg(null);
       setNewFaviconUrl("");
       fetchOrganizations();
@@ -228,7 +228,7 @@ export default function FaviconManagement() {
                               <div className="btn-group">
                                 <button
                                   className="btn btn-sm btn-success"
-                                  onClick={() => updateFavicon(org.name, newFaviconUrl)}
+                                  onClick={() => updateFavicon(org.id, org.name, newFaviconUrl)}
                                   disabled={!newFaviconUrl || saving}
                                 >
                                   {saving ? "Kaydediliyor..." : "Kaydet"}
