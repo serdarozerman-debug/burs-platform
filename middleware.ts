@@ -3,6 +3,15 @@ import { NextResponse } from 'next/server';
 import type { NextRequest } from 'next/server';
 
 export async function middleware(req: NextRequest) {
+  // Skip middleware for API routes, static files, and images
+  if (
+    req.nextUrl.pathname.startsWith('/api/') ||
+    req.nextUrl.pathname.startsWith('/_next/') ||
+    req.nextUrl.pathname.startsWith('/static/')
+  ) {
+    return NextResponse.next();
+  }
+
   const res = NextResponse.next();
   
   const supabase = createServerClient(
