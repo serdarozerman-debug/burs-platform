@@ -92,7 +92,7 @@ export default function ScholarshipDetailPage() {
                   <div className="card-grid-2-image-left">
                     <div className="image-box">
                       {scholarship.organization?.logo_url ? (
-                        <img src={scholarship.organization.logo_url} alt={scholarship.organization.name} />
+                        <img src={scholarship.organization?.logo_url} alt={scholarship.organization?.name || 'Organization'} />
                       ) : (
                         <div style={{ 
                           width: "80px",

@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { supabase } from '@/lib/supabase';
 
-// GET single scholarship by ID
 export async function GET(
   request: NextRequest,
   { params }: { params: { id: string } }
@@ -16,7 +15,7 @@ export async function GET(
       );
     }
 
-    // Fetch scholarship with organization JOIN
+    // Fetch scholarship with organization data
     const { data, error } = await supabase
       .from('scholarships')
       .select(`
@@ -24,6 +23,7 @@ export async function GET(
         organization:organization_id (
           id,
           name,
+          slug,
           logo_url,
           website,
           type,
@@ -49,12 +49,17 @@ export async function GET(
       );
     }
 
-    // Return scholarship data
+    // Increment view count
+    await supabase
+      .from('scholarships')
+      .update({ view_count: (data.view_count || 0) + 1 })
+      .eq('id', id);
+
     return NextResponse.json(data);
-  } catch (error) {
+  } catch (error: any) {
     console.error('API error:', error);
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: 'Internal server error', details: error.message },
       { status: 500 }
     );
   }
