@@ -1,0 +1,1281 @@
+[
+  {
+    "name": "TÜBİTAK",
+    "website": "https://www.tubitak.gov.tr/tr/burslar",
+    "category": "kamu",
+    "description": "Türkiye Bilimsel ve Teknolojik Araştırma Kurumu"
+  },
+  {
+    "name": "Türk Eğitim Vakfı (TEV)",
+    "website": "https://www.tev.org.tr",
+    "category": "vakıf",
+    "description": "Eğitim alanında çalışan köklü vakıf"
+  },
+  {
+    "name": "Vehbi Koç Vakfı",
+    "website": "https://www.vkv.org.tr",
+    "category": "vakıf",
+    "description": "Eğitim, sağlık ve kültür alan larında destek veren vakıf"
+  },
+  {
+    "name": "Sabancı Vakfı",
+    "website": "https://www.sabancivakfi.org",
+    "category": "vakıf",
+    "description": "Eğitim ve sosyal gelişim programları sunan vakıf"
+  },
+  {
+    "name": "Türkiye Scholarships (YTB)",
+    "website": "https://www.turkiyeburslari.gov.tr",
+    "category": "kamu",
+    "description": "Yurtdışından öğrencilere burs programı"
+  },
+  {
+    "name": "Darüşşafaka Cemiyeti",
+    "website": "https://www.darussafaka.org",
+    "category": "vakıf",
+    "description": "Tam burs ve yatılı eğitim imkanı"
+  },
+  {
+    "name": "İstanbul Büyükşehir Belediyesi",
+    "website": "https://www.ibb.istanbul",
+    "category": "belediye",
+    "description": "İBB eğitim bursları"
+  },
+  {
+    "name": "Ankara Büyükşehir Belediyesi",
+    "website": "https://www.ankara.bel.tr",
+    "category": "belediye",
+    "description": "Ankara Belediyesi eğitim destekleri"
+  },
+  {
+    "name": "İzmir Büyükşehir Belediyesi",
+    "website": "https://www.izmir.bel.tr",
+    "category": "belediye",
+    "description": "İzmir Belediyesi burs programları"
+  },
+  {
+    "name": "Bursa Büyükşehir Belediyesi",
+    "website": "https://www.bursa.bel.tr",
+    "category": "belediye",
+    "description": "Bursa Belediyesi eğitim destekleri"
+  },
+  {
+    "name": "Antalya Büyükşehir Belediyesi",
+    "website": "https://www.antalya.bel.tr",
+    "category": "belediye",
+    "description": "Antalya Belediyesi burs programları"
+  },
+  {
+    "name": "Konya Büyükşehir Belediyesi",
+    "website": "https://www.konya.bel.tr",
+    "category": "belediye",
+    "description": "Konya Belediyesi eğitim destekleri"
+  },
+  {
+    "name": "Gaziantep Büyükşehir Belediyesi",
+    "website": "https://www.gaziantep.bel.tr",
+    "category": "belediye",
+    "description": "Gaziantep Belediyesi burs programları"
+  },
+  {
+    "name": "Kayseri Büyükşehir Belediyesi",
+    "website": "https://www.kayseri.bel.tr",
+    "category": "belediye",
+    "description": "Kayseri Belediyesi eğitim destekleri"
+  },
+  {
+    "name": "Eskişehir Büyükşehir Belediyesi",
+    "website": "https://www.eskisehir.bel.tr",
+    "category": "belediye",
+    "description": "Eskişehir Belediyesi burs programları"
+  },
+  {
+    "name": "Adana Büyükşehir Belediyesi",
+    "website": "https://www.adana.bel.tr",
+    "category": "belediye",
+    "description": "Adana Belediyesi eğitim destekleri"
+  },
+  {
+    "name": "TOBB (Türkiye Odalar ve Borsalar Birliği)",
+    "website": "https://www.tobb.org.tr",
+    "category": "özel",
+    "description": "TOBB Üniversitesi ve burs programları"
+  },
+  {
+    "name": "ENKA Vakfı",
+    "website": "https://www.enka.com/tr/kurumsal-sorumluluk/enka-vakfi",
+    "category": "vakıf",
+    "description": "ENKA şirketler grubu eğitim vakfı"
+  },
+  {
+    "name": "Aydın Doğan Vakfı",
+    "website": "https://www.aydindoganvakfi.org.tr",
+    "category": "vakıf",
+    "description": "Eğitim ve kültür alanında destek"
+  },
+  {
+    "name": "Türk Hava Kurumu",
+    "website": "https://www.thk.org.tr",
+    "category": "kamu",
+    "description": "Havacılık eğitimi bursları"
+  },
+  {
+    "name": "MEB (Milli Eğitim Bakanlığı)",
+    "website": "https://www.meb.gov.tr",
+    "category": "kamu",
+    "description": "Devlet bursları ve öğrenci kredileri"
+  },
+  {
+    "name": "YÖK (Yükseköğretim Kurulu)",
+    "website": "https://www.yok.gov.tr",
+    "category": "kamu",
+    "description": "Yükseköğretim bursları"
+  },
+  {
+    "name": "İlim Yayma Vakfı",
+    "website": "https://www.ilimyayma.org",
+    "category": "vakıf",
+    "description": "Eğitim ve yurt hizmetleri"
+  },
+  {
+    "name": "Türkiye Diyanet Vakfı",
+    "website": "https://www.tdv.org",
+    "category": "vakıf",
+    "description": "Din eğitimi ve sosyal yardım"
+  },
+  {
+    "name": "Deniz Feneri Derneği",
+    "website": "https://www.denizfeneri.org.tr",
+    "category": "dernek",
+    "description": "Eğitim ve sosyal yardım"
+  },
+  {
+    "name": "LÖSEV (Lösemili Çocuklar Vakfı)",
+    "website": "https://www.losev.org.tr",
+    "category": "vakıf",
+    "description": "Lösemili öğrencilere destek"
+  },
+  {
+    "name": "TEMA Vakfı",
+    "website": "https://www.tema.org.tr",
+    "category": "vakıf",
+    "description": "Çevre ve tarım eğitimi bursları"
+  },
+  {
+    "name": "İHH İnsani Yardım Vakfı",
+    "website": "https://www.ihh.org.tr",
+    "category": "dernek",
+    "description": "Eğitim ve insani yardım"
+  },
+  {
+    "name": "Bilim ve Sanat Vakfı",
+    "website": "https://www.bisav.org.tr",
+    "category": "vakıf",
+    "description": "Bilim ve sanat eğitimi"
+  },
+  {
+    "name": "Türk Kızılayı",
+    "website": "https://www.kizilay.org.tr",
+    "category": "dernek",
+    "description": "Eğitim ve sosyal yardım"
+  },
+  {
+    "name": "Boğaziçi Üniversitesi",
+    "website": "https://www.boun.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Orta Doğu Teknik Üniversitesi (ODTÜ)",
+    "website": "https://www.metu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İstanbul Teknik Üniversitesi (İTÜ)",
+    "website": "https://www.itu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Koç Üniversitesi",
+    "website": "https://www.ku.edu.tr",
+    "category": "üniversite",
+    "description": "Tam ve kısmi burs programları"
+  },
+  {
+    "name": "Sabancı Üniversitesi",
+    "website": "https://www.sabanciuniv.edu",
+    "category": "üniversite",
+    "description": "Tam ve kısmi burs programları"
+  },
+  {
+    "name": "Bilkent Üniversitesi",
+    "website": "https://www.bilkent.edu.tr",
+    "category": "üniversite",
+    "description": "Tam ve kısmi burs programları"
+  },
+  {
+    "name": "Özyeğin Üniversitesi",
+    "website": "https://www.ozyegin.edu.tr",
+    "category": "üniversite",
+    "description": "Tam ve kısmi burs programları"
+  },
+  {
+    "name": "İstanbul Bilgi Üniversitesi",
+    "website": "https://www.bilgi.edu.tr",
+    "category": "üniversite",
+    "description": "Burs ve kredi imkanları"
+  },
+  {
+    "name": "Kadir Has Üniversitesi",
+    "website": "https://www.khas.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Bahçeşehir Üniversitesi",
+    "website": "https://www.bahcesehir.edu.tr",
+    "category": "üniversite",
+    "description": "Burs ve indirim programları"
+  },
+  {
+    "name": "Yeditepe Üniversitesi",
+    "website": "https://www.yeditepe.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Türk Matematik Derneği",
+    "website": "https://www.tmd.org.tr",
+    "category": "dernek",
+    "description": "Matematik eğitimi bursları"
+  },
+  {
+    "name": "Türk Dil Kurumu",
+    "website": "https://www.tdk.gov.tr",
+    "category": "kamu",
+    "description": "Dil araştırmaları bursları"
+  },
+  {
+    "name": "Atatürk Kültür, Dil ve Tarih Yüksek Kurumu",
+    "website": "https://www.ayk.gov.tr",
+    "category": "kamu",
+    "description": "Araştırma bursları"
+  },
+  {
+    "name": "Fulbright Türkiye",
+    "website": "https://www.fulbright.org.tr",
+    "category": "uluslararası",
+    "description": "ABD eğitim değişim programı"
+  },
+  {
+    "name": "British Council Türkiye",
+    "website": "https://www.britishcouncil.org.tr",
+    "category": "uluslararası",
+    "description": "İngiltere eğitim bursları"
+  },
+  {
+    "name": "DAAD Türkiye",
+    "website": "https://www.daad.de/tr",
+    "category": "uluslararası",
+    "description": "Almanya eğitim bursları"
+  },
+  {
+    "name": "Erasmus+ Türkiye",
+    "website": "https://www.ua.gov.tr/programlar/erasmus-programi",
+    "category": "uluslararası",
+    "description": "AB eğitim programı"
+  },
+  {
+    "name": "Chevening Türkiye",
+    "website": "https://www.chevening.org/scholarships/turkey",
+    "category": "uluslararası",
+    "description": "İngiltere hükümet bursları"
+  },
+  {
+    "name": "Mevlana Değişim Programı",
+    "website": "https://www.yok.gov.tr/mevlana",
+    "category": "kamu",
+    "description": "Uluslararası öğrenci değişimi"
+  },
+  {
+    "name": "Farabi Değişim Programı",
+    "website": "https://www.yok.gov.tr/farabi",
+    "category": "kamu",
+    "description": "Üniversitelerarası öğrenci değişimi"
+  },
+  {
+    "name": "Sağlık Bakanlığı",
+    "website": "https://www.saglik.gov.tr",
+    "category": "kamu",
+    "description": "Sağlık personeli eğitim bursları"
+  },
+  {
+    "name": "Kültür ve Turizm Bakanlığı",
+    "website": "https://www.ktb.gov.tr",
+    "category": "kamu",
+    "description": "Sanat ve kültür eğitimi bursları"
+  },
+  {
+    "name": "Çalışma ve Sosyal Güvenlik Bakanlığı",
+    "website": "https://www.csgb.gov.tr",
+    "category": "kamu",
+    "description": "Meslek eğitimi destekleri"
+  },
+  {
+    "name": "Gençlik ve Spor Bakanlığı",
+    "website": "https://www.gsb.gov.tr",
+    "category": "kamu",
+    "description": "Gençlik ve spor bursları"
+  },
+  {
+    "name": "KOSGEB",
+    "website": "https://www.kosgeb.gov.tr",
+    "category": "kamu",
+    "description": "Girişimcilik eğitim destekleri"
+  },
+  {
+    "name": "İŞKUR",
+    "website": "https://www.iskur.gov.tr",
+    "category": "kamu",
+    "description": "Mesleki eğitim programları"
+  },
+  {
+    "name": "TİKA (Türk İşbirliği ve Koordinasyon Ajansı)",
+    "website": "https://www.tika.gov.tr",
+    "category": "kamu",
+    "description": "Uluslararası öğrenci bursları"
+  },
+  {
+    "name": "İSEDAK",
+    "website": "https://www.isedak.org",
+    "category": "uluslararası",
+    "description": "İslam işbirliği bursları"
+  },
+  {
+    "name": "Hrant Dink Vakfı",
+    "website": "https://www.hrantdink.org",
+    "category": "vakıf",
+    "description": "İnsan hakları ve eğitim"
+  },
+  {
+    "name": "Açı Öğretim Kurumları",
+    "website": "https://www.aciegitimsystemi.com",
+    "category": "özel",
+    "description": "Özel öğrenci bursları"
+  },
+  {
+    "name": "Bahçeşehir Koleji",
+    "website": "https://www.bahcesehir.k12.tr",
+    "category": "özel",
+    "description": "Lise burs programları"
+  },
+  {
+    "name": "TED (Türk Eğitim Derneği)",
+    "website": "https://www.ted.org.tr",
+    "category": "dernek",
+    "description": "Eğitim ve burs programları"
+  },
+  {
+    "name": "TOG (Toplum Gönüllüleri Vakfı)",
+    "website": "https://www.tog.org.tr",
+    "category": "vakıf",
+    "description": "Sosyal sorumluluk projeleri"
+  },
+  {
+    "name": "TEGV (Türkiye Eğitim Gönüllüleri Vakfı)",
+    "website": "https://www.tegv.org",
+    "category": "vakıf",
+    "description": "Çocuk eğitimi programları"
+  },
+  {
+    "name": "AÇEV (Anne Çocuk Eğitim Vakfı)",
+    "website": "https://www.acev.org",
+    "category": "vakıf",
+    "description": "Anne çocuk eğitimi"
+  },
+  {
+    "name": "Eğitim Reformu Girişimi",
+    "website": "https://www.egitimreformugirisimi.org",
+    "category": "dernek",
+    "description": "Eğitim reformu çalışmaları"
+  },
+  {
+    "name": "Ashoka Türkiye",
+    "website": "https://www.ashoka.org/tr-tr",
+    "category": "uluslararası",
+    "description": "Sosyal girişimcilik programları"
+  },
+  {
+    "name": "Endeavor Türkiye",
+    "website": "https://endeavor.org.tr",
+    "category": "uluslararası",
+    "description": "Girişimci desteği programları"
+  },
+  {
+    "name": "Impact Hub İstanbul",
+    "website": "https://istanbul.impacthub.net",
+    "category": "özel",
+    "description": "Sosyal inovasyon programları"
+  },
+  {
+    "name": "Habitat Derneği",
+    "website": "https://www.habitat.org.tr",
+    "category": "dernek",
+    "description": "Gençlik ve eğitim programları"
+  },
+  {
+    "name": "Teach for Turkey (Öğretmen Ol)",
+    "website": "https://www.ogretmenol.org",
+    "category": "dernek",
+    "description": "Öğretmen yetiştirme programı"
+  },
+  {
+    "name": "Türk Tarih Kurumu",
+    "website": "https://www.ttk.gov.tr",
+    "category": "kamu",
+    "description": "Tarih araştırmaları bursları"
+  },
+  {
+    "name": "Türk Coğrafya Kurumu",
+    "website": "https://www.tck.gov.tr",
+    "category": "kamu",
+    "description": "Coğrafya araştırmaları"
+  },
+  {
+    "name": "Mimar Sinan Güzel Sanatlar Üniversitesi",
+    "website": "https://www.msgsu.edu.tr",
+    "category": "üniversite",
+    "description": "Sanat eğitimi bursları"
+  },
+  {
+    "name": "Hacettepe Üniversitesi",
+    "website": "https://www.hacettepe.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ankara Üniversitesi",
+    "website": "https://www.ankara.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Gazi Üniversitesi",
+    "website": "https://www.gazi.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ege Üniversitesi",
+    "website": "https://www.ege.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Dokuz Eylül Üniversitesi",
+    "website": "https://www.deu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İzmir Ekonomi Üniversitesi",
+    "website": "https://www.ieu.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İzmir Yüksek Teknoloji Enstitüsü (İYTE)",
+    "website": "https://www.iyte.edu.tr",
+    "category": "üniversite",
+    "description": "Teknik eğitim bursları"
+  },
+  {
+    "name": "Anadolu Üniversitesi",
+    "website": "https://www.anadolu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Uludağ Üniversitesi",
+    "website": "https://www.uludag.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Erciyes Üniversitesi",
+    "website": "https://www.erciyes.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Selçuk Üniversitesi",
+    "website": "https://www.selcuk.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Çukurova Üniversitesi",
+    "website": "https://www.cu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Akdeniz Üniversitesi",
+    "website": "https://www.akdeniz.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Karadeniz Teknik Üniversitesi (KTÜ)",
+    "website": "https://www.ktu.edu.tr",
+    "category": "üniversite",
+    "description": "Teknik eğitim bursları"
+  },
+  {
+    "name": "Atatürk Üniversitesi",
+    "website": "https://www.atauni.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İnönü Üniversitesi",
+    "website": "https://www.inonu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Fırat Üniversitesi",
+    "website": "https://www.firat.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Dicle Üniversitesi",
+    "website": "https://www.dicle.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Gaziosmanpaşa Üniversitesi",
+    "website": "https://www.gop.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Pamukkale Üniversitesi",
+    "website": "https://www.pau.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Sakarya Üniversitesi",
+    "website": "https://www.sakarya.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ondokuz Mayıs Üniversitesi",
+    "website": "https://www.omu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Süleyman Demirel Üniversitesi",
+    "website": "https://www.sdu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Çanakkale Onsekiz Mart Üniversitesi",
+    "website": "https://www.comu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Balıkesir Üniversitesi",
+    "website": "https://www.balikesir.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Trakya Üniversitesi",
+    "website": "https://www.trakya.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kocaeli Üniversitesi",
+    "website": "https://www.kocaeli.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Düzce Üniversitesi",
+    "website": "https://www.duzce.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bolu Abant İzzet Baysal Üniversitesi",
+    "website": "https://www.ibu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kastamonu Üniversitesi",
+    "website": "https://www.kastamonu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kırıkkale Üniversitesi",
+    "website": "https://www.kku.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Nevşehir Hacı Bektaş Veli Üniversitesi",
+    "website": "https://www.nevsehir.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Niğde Ömer Halisdemir Üniversitesi",
+    "website": "https://www.ohu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Aksaray Üniversitesi",
+    "website": "https://www.aksaray.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kırşehir Ahi Evran Üniversitesi",
+    "website": "https://www.ahievran.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Yozgat Bozok Üniversitesi",
+    "website": "https://www.bozok.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Sivas Cumhuriyet Üniversitesi",
+    "website": "https://www.cumhuriyet.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Tokat Gaziosmanpaşa Üniversitesi",
+    "website": "https://www.gop.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Amasya Üniversitesi",
+    "website": "https://www.amasya.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Çorum Hitit Üniversitesi",
+    "website": "https://www.hitit.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Giresun Üniversitesi",
+    "website": "https://www.giresun.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ordu Üniversitesi",
+    "website": "https://www.odu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bayburt Üniversitesi",
+    "website": "https://www.bayburt.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Gümüşhane Üniversitesi",
+    "website": "https://www.gumushane.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Artvin Çoruh Üniversitesi",
+    "website": "https://www.artvin.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Rize Recep Tayyip Erdoğan Üniversitesi",
+    "website": "https://www.erdogan.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Trabzon Üniversitesi",
+    "website": "https://www.trabzon.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Erzincan Binali Yıldırım Üniversitesi",
+    "website": "https://www.erzincan.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Erzurum Teknik Üniversitesi",
+    "website": "https://www.erzurum.edu.tr",
+    "category": "üniversite",
+    "description": "Teknik eğitim bursları"
+  },
+  {
+    "name": "Ağrı İbrahim Çeçen Üniversitesi",
+    "website": "https://www.agri.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Iğdır Üniversitesi",
+    "website": "https://www.igdir.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kars Kafkas Üniversitesi",
+    "website": "https://www.kafkas.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ardahan Üniversitesi",
+    "website": "https://www.ardahan.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Van Yüzüncü Yıl Üniversitesi",
+    "website": "https://www.yyu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bitlis Eren Üniversitesi",
+    "website": "https://www.beu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Hakkari Üniversitesi",
+    "website": "https://www.hakkari.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Muş Alparslan Üniversitesi",
+    "website": "https://www.alparslan.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Siirt Üniversitesi",
+    "website": "https://www.siirt.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Şırnak Üniversitesi",
+    "website": "https://www.sirnak.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Batman Üniversitesi",
+    "website": "https://www.batman.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Mardin Artuklu Üniversitesi",
+    "website": "https://www.artuklu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Adıyaman Üniversitesi",
+    "website": "https://www.adiyaman.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bingöl Üniversitesi",
+    "website": "https://www.bingol.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Elazığ Fırat Üniversitesi",
+    "website": "https://www.firat.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Tunceli Munzur Üniversitesi",
+    "website": "https://www.munzur.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Malatya İnönü Üniversitesi",
+    "website": "https://www.inonu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kahramanmaraş Sütçü İmam Üniversitesi",
+    "website": "https://www.ksu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Osmaniye Korkut Ata Üniversitesi",
+    "website": "https://www.osmaniye.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Hatay Mustafa Kemal Üniversitesi",
+    "website": "https://www.mku.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Mersin Üniversitesi",
+    "website": "https://www.mersin.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kırklareli Üniversitesi",
+    "website": "https://www.klu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Tekirdağ Namık Kemal Üniversitesi",
+    "website": "https://www.nku.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Yalova Üniversitesi",
+    "website": "https://www.yalova.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bilecik Şeyh Edebali Üniversitesi",
+    "website": "https://www.bilecik.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Karaman Üniversitesi",
+    "website": "https://www.kmu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Afyonkarahisar Sağlık Bilimleri Üniversitesi",
+    "website": "https://www.afsu.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "Isparta Süleyman Demirel Üniversitesi",
+    "website": "https://www.sdu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Burdur Mehmet Akif Ersoy Üniversitesi",
+    "website": "https://www.mehmetakif.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Denizli Pamukkale Üniversitesi",
+    "website": "https://www.pau.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Muğla Sıtkı Koçman Üniversitesi",
+    "website": "https://www.mu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Aydın Adnan Menderes Üniversitesi",
+    "website": "https://www.adu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Manisa Celal Bayar Üniversitesi",
+    "website": "https://www.cbu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Uşak Üniversitesi",
+    "website": "https://www.usak.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kütahya Dumlupınar Üniversitesi",
+    "website": "https://www.dpu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Afyonkarahisar Sağlık Bilimleri Üniversitesi",
+    "website": "https://www.afsu.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "Zonguldak Bülent Ecevit Üniversitesi",
+    "website": "https://www.beun.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Bartın Üniversitesi",
+    "website": "https://www.bartin.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Karabük Üniversitesi",
+    "website": "https://www.karabuk.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Sinop Üniversitesi",
+    "website": "https://www.sinop.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Çankırı Karatekin Üniversitesi",
+    "website": "https://www.karatekin.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Kilis 7 Aralık Üniversitesi",
+    "website": "https://www.kilis.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Şanlıurfa Harran Üniversitesi",
+    "website": "https://www.harran.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Diyarbakır Dicle Üniversitesi",
+    "website": "https://www.dicle.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İstanbul Üniversitesi",
+    "website": "https://www.istanbul.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İstanbul Üniversitesi-Cerrahpaşa",
+    "website": "https://www.iuc.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "Marmara Üniversitesi",
+    "website": "https://www.marmara.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Yıldız Teknik Üniversitesi",
+    "website": "https://www.yildiz.edu.tr",
+    "category": "üniversite",
+    "description": "Teknik eğitim bursları"
+  },
+  {
+    "name": "Galatasaray Üniversitesi",
+    "website": "https://www.gsu.edu.tr",
+    "category": "üniversite",
+    "description": "Fransızca eğitim bursları"
+  },
+  {
+    "name": "İstanbul Medeniyet Üniversitesi",
+    "website": "https://www.medeniyet.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "İstanbul Gelişim Üniversitesi",
+    "website": "https://www.gelisim.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Aydın Üniversitesi",
+    "website": "https://www.aydin.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Ticaret Üniversitesi",
+    "website": "https://www.ticaret.edu.tr",
+    "category": "üniversite",
+    "description": "İşletme ve ticaret bursları"
+  },
+  {
+    "name": "İstanbul Kültür Üniversitesi",
+    "website": "https://www.iku.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Arel Üniversitesi",
+    "website": "https://www.arel.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Esenyurt Üniversitesi",
+    "website": "https://www.esenyurt.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Beykent Üniversitesi",
+    "website": "https://www.beykent.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Maltepe Üniversitesi",
+    "website": "https://www.maltepe.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Uskudar Üniversitesi",
+    "website": "https://www.uskudar.edu.tr",
+    "category": "üniversite",
+    "description": "Psikoloji ve sağlık bilimleri"
+  },
+  {
+    "name": "Işık Üniversitesi",
+    "website": "https://www.isikun.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Altınbaş Üniversitesi",
+    "website": "https://www.altinbas.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Fen Bilimleri Üniversitesi",
+    "website": "https://www.fen.edu.tr",
+    "category": "üniversite",
+    "description": "Fen bilimleri bursları"
+  },
+  {
+    "name": "Türk-Alman Üniversitesi",
+    "website": "https://www.tau.edu.tr",
+    "category": "üniversite",
+    "description": "Türk-Alman eğitim programları"
+  },
+  {
+    "name": "MEF Üniversitesi",
+    "website": "https://www.mef.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Nişantaşı Üniversitesi",
+    "website": "https://www.nisantasi.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Topkapı Üniversitesi",
+    "website": "https://www.topkapi.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Rumeli Üniversitesi",
+    "website": "https://www.rumeli.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Sabahattin Zaim Üniversitesi",
+    "website": "https://www.izu.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul 29 Mayıs Üniversitesi",
+    "website": "https://www.29mayis.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Okan Üniversitesi",
+    "website": "https://www.okan.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Doğuş Üniversitesi",
+    "website": "https://www.dogus.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Medipol Üniversitesi",
+    "website": "https://www.medipol.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "İstanbul Kent Üniversitesi",
+    "website": "https://www.kent.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İstanbul Atlas Üniversitesi",
+    "website": "https://www.atlas.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "İhsan Doğramacı Bilkent Üniversitesi",
+    "website": "https://www.bilkent.edu.tr",
+    "category": "üniversite",
+    "description": "Tam ve kısmi burslar"
+  },
+  {
+    "name": "Atılım Üniversitesi",
+    "website": "https://www.atilim.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Başkent Üniversitesi",
+    "website": "https://www.baskent.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri ve diğer burslar"
+  },
+  {
+    "name": "Çankaya Üniversitesi",
+    "website": "https://www.cankaya.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Ufuk Üniversitesi",
+    "website": "https://www.ufuk.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "TED Üniversitesi",
+    "website": "https://www.tedu.edu.tr",
+    "category": "üniversite",
+    "description": "Türk Eğitim Derneği bursları"
+  },
+  {
+    "name": "Lokman Hekim Üniversitesi",
+    "website": "https://www.lokmanhekim.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "Ankara Bilim Üniversitesi",
+    "website": "https://www.ankarabilim.edu.tr",
+    "category": "üniversite",
+    "description": "Burs programları"
+  },
+  {
+    "name": "Ankara Medipol Üniversitesi",
+    "website": "https://www.ankaramedipol.edu.tr",
+    "category": "üniversite",
+    "description": "Sağlık bilimleri bursları"
+  },
+  {
+    "name": "Ankara Yıldırım Beyazıt Üniversitesi",
+    "website": "https://www.ybu.edu.tr",
+    "category": "üniversite",
+    "description": "Üniversite burs programları"
+  },
+  {
+    "name": "Ankara Sosyal Bilimler Üniversitesi",
+    "website": "https://www.asbu.edu.tr",
+    "category": "üniversite",
+    "description": "Sosyal bilimler bursları"
+  },
+  {
+    "name": "Ankara Müzik ve Güzel Sanatlar Üniversitesi",
+    "website": "https://www.mgu.edu.tr",
+    "category": "üniversite",
+    "description": "Sanat eğitimi bursları"
+  },
+  {
+    "name": "Türk Hava Kurumu Üniversitesi",
+    "website": "https://www.thk.edu.tr",
+    "category": "üniversite",
+    "description": "Havacılık bursları"
+  },
+  {
+    "name": "TOBB Ekonomi ve Teknoloji Üniversitesi",
+    "website": "https://www.etu.edu.tr",
+    "category": "üniversite",
+    "description": "Tam burs imkanları"
+  },
+  {
+    "name": "Ostim Teknik Üniversitesi",
+    "website": "https://www.ostimteknik.edu.tr",
+    "category": "üniversite",
+    "description": "Teknik eğitim bursları"
+  }
+]
+

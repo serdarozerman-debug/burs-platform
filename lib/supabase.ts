@@ -18,5 +18,6 @@ export type Scholarship = {
   education_level: string
   application_url: string
   is_active: boolean
+  has_api_integration?: boolean
   created_at: string
 }

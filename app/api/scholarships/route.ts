@@ -9,62 +9,83 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get('search')
     const types = searchParams.getAll('type').filter(Boolean)
     const educationLevels = searchParams.getAll('education_level').filter(Boolean)
+    const organizations = searchParams.getAll('organization').filter(Boolean)
     const minAmount = searchParams.get('min_amount')
     const maxAmount = searchParams.get('max_amount')
     const daysLeft = searchParams.get('days_left')
     const sort = searchParams.get('sort') ?? 'deadline_asc'
+    const page = parseInt(searchParams.get('page') ?? '1')
+    const limit = parseInt(searchParams.get('limit') ?? '10')
 
-    // Base query oluştur
+    // Base query oluştur - count için
+    let countQuery = supabase
+      .from('scholarships')
+      .select('*', { count: 'exact', head: true })
+      .eq('is_active', true)
+    
+    // Data query
     let query = supabase
       .from('scholarships')
       .select('*')
       .eq('is_active', true)
 
-    // Search filtresi: title veya organization içinde ara (case-insensitive)
-    if (search) {
-      query = query.or(`title.ilike.%${search}%,organization.ilike.%${search}%`)
-    }
-
-    // Type filtresi
-    if (types.length > 0) {
-      query = query.in('type', types)
-    }
-
-    // Education level filtresi
-    if (educationLevels.length > 0) {
-      query = query.in('education_level', educationLevels)
-    }
-
-    // Minimum amount filtresi
-    if (minAmount) {
-      const minAmountNum = parseFloat(minAmount)
-      if (!isNaN(minAmountNum)) {
-        query = query.gte('amount', minAmountNum)
+    // Filtreleri hem count hem data query'sine uygula
+    const applyFilters = (q: any) => {
+      // Search filtresi
+      if (search) {
+        q = q.or(`title.ilike.%${search}%,organization.ilike.%${search}%`)
       }
-    }
 
-    // Maximum amount filtresi
-    if (maxAmount) {
-      const maxAmountNum = parseFloat(maxAmount)
-      if (!isNaN(maxAmountNum)) {
-        query = query.lte('amount', maxAmountNum)
+      // Type filtresi
+      if (types.length > 0) {
+        q = q.in('type', types)
       }
-    }
 
-    // Days left filtresi: son başvuru tarihi X gün içinde olanlar
-    if (daysLeft) {
-      const daysNum = parseInt(daysLeft)
-      if (!isNaN(daysNum) && daysNum > 0) {
-        const today = new Date()
-        const maxDate = new Date()
-        maxDate.setDate(today.getDate() + daysNum)
-        
-        // Bugünden itibaren X gün içindeki deadline'ları filtrele
-        query = query
-          .gte('deadline', today.toISOString().split('T')[0])
-          .lte('deadline', maxDate.toISOString().split('T')[0])
+      // Education level filtresi
+      if (educationLevels.length > 0) {
+        q = q.in('education_level', educationLevels)
       }
+
+      // Organization filtresi
+      if (organizations.length > 0) {
+        q = q.in('organization', organizations)
+      }
+
+      // Amount filtreleri
+      if (minAmount) {
+        const minAmountNum = parseFloat(minAmount)
+        if (!isNaN(minAmountNum)) {
+          q = q.gte('amount', minAmountNum)
+        }
+      }
+
+      if (maxAmount) {
+        const maxAmountNum = parseFloat(maxAmount)
+        if (!isNaN(maxAmountNum)) {
+          q = q.lte('amount', maxAmountNum)
+        }
+      }
+
+      // Days left filtresi
+      if (daysLeft) {
+        const daysNum = parseInt(daysLeft)
+        if (!isNaN(daysNum) && daysNum > 0) {
+          const today = new Date()
+          const maxDate = new Date()
+          maxDate.setDate(today.getDate() + daysNum)
+          
+          q = q
+            .gte('deadline', today.toISOString().split('T')[0])
+            .lte('deadline', maxDate.toISOString().split('T')[0])
+        }
+      }
+      
+      return q
     }
+    
+    // Filtreleri uygula
+    countQuery = applyFilters(countQuery)
+    query = applyFilters(query)
 
     // Sıralama
     switch (sort) {
@@ -82,17 +103,33 @@ export async function GET(request: NextRequest) {
         break
     }
 
-    const { data, error } = await query
+    // Pagination uygula
+    const from = (page - 1) * limit
+    const to = from + limit - 1
+    query = query.range(from, to)
 
-    if (error) {
-      console.error('Supabase error:', error)
+    // Count ve data'yı al
+    const [countResult, dataResult] = await Promise.all([
+      countQuery,
+      query
+    ])
+
+    if (dataResult.error) {
+      console.error('Supabase error:', dataResult.error)
       return NextResponse.json(
-        { error: error.message },
+        { error: dataResult.error.message },
         { status: 500 }
       )
     }
 
-    return NextResponse.json(data || [])
+    // Response with count
+    return NextResponse.json({
+      data: dataResult.data || [],
+      total: countResult.count || 0,
+      page: page,
+      limit: limit,
+      totalPages: Math.ceil((countResult.count || 0) / limit)
+    })
   } catch (error) {
     console.error('API error:', error)
     return NextResponse.json(

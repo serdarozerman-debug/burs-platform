@@ -1,0 +1,348 @@
+Invalid -W option ignored: invalid module name: 'urllib3.exceptions'
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tubitak.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'tubitak.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tubitak.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'tubitak.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tev.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tev.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tev.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.tev.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.vkv.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.vkv.org.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.sabancivakfi.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.sabancivakfi.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.turkiyeburslari.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.turkiyeburslari.gov.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.darussafaka.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.darussafaka.org'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.ibb.istanbul'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.ibb.istanbul'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.ankara.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.ankara.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.izmir.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.izmir.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.bursa.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.bursa.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.antalya.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.antalya.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.konya.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.konya.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.gaziantep.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.gaziantep.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.kayseri.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.kayseri.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.eskisehir.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/site-packages/urllib3/connectionpool.py:1097: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.eskisehir.bel.tr'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#tls-warnings
+  warnings.warn(
+🎯 İlk 15 kurum scrape edilecek (test modu)
+
+🚀 15 kurum scrape edilecek (üniversiteler hariç)
+
+📊 Toplam 213 kurumdan 15 seçildi
+
+📋 Scrape edilecek kategoriler:
+  ✅ belediye        :   9 kurum
+  ✅ kamu            :   2 kurum
+  ✅ vakıf           :   4 kurum
+
+
+============================================================
+[1/15] TÜBİTAK (kamu)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.tubitak.gov.tr/sites/default/files/favicon.png
+
+🤖 AI Scraping: TÜBİTAK
+📍 URL: https://www.tubitak.gov.tr/tr/burslar
+  ✅ 4 burs bulundu
+
+💾 4 burs database'e kaydediliyor...
+  ⏭️  Zaten var: 2205 - Lisans Burs Programı...
+  ⏭️  Zaten var: 2210 - Yurt İçi Yüksek Lisans Burs Programları...
+  ⏭️  Zaten var: 2211 - Yurt İçi Doktora Burs Programları...
+  ⏭️  Zaten var: 2216B – TÜBİTAK-TWAS Doktora Sırası ve Doktora Son...
+
+📊 Bu kurum: 4 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[2/15] Türk Eğitim Vakfı (TEV) (vakıf)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.tev.org.tr/favicons/favicon-32x32.png
+
+🤖 AI Scraping: Türk Eğitim Vakfı (TEV)
+📍 URL: https://www.tev.org.tr
+  ✅ 5 burs bulundu
+
+💾 5 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Lise Bursu...
+  ⏭️  Zaten var: Üniversite Bursu...
+  ⏭️  Zaten var: Yüksek Lisans Bursu...
+  ⏭️  Zaten var: Doktora Bursu...
+  ⏭️  Zaten var: Üstün Başarı Bursu...
+
+📊 Bu kurum: 5 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[3/15] Vehbi Koç Vakfı (vakıf)
+============================================================
+  🔍 Favicon aranıyor...
+  ⚠️  Favicon bulunamadı
+
+🤖 AI Scraping: Vehbi Koç Vakfı
+📍 URL: https://www.vkv.org.tr
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Vehbi Koç Vakfı Bursu...
+
+📊 Bu kurum: 1 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[4/15] Sabancı Vakfı (vakıf)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.sabancivakfi.org/i/assets/images/site/favicon.png
+
+🤖 AI Scraping: Sabancı Vakfı
+📍 URL: https://www.sabancivakfi.org
+  ✅ 0 burs bulundu
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[5/15] Türkiye Scholarships (YTB) (kamu)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://cdn.turkiyeburslari.gov.tr/Content/images/fav.png
+
+🤖 AI Scraping: Türkiye Scholarships (YTB)
+📍 URL: https://www.turkiyeburslari.gov.tr
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Türkiye Scholarships...
+
+📊 Bu kurum: 1 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[6/15] Darüşşafaka Cemiyeti (vakıf)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.darussafaka.org/favicon.ico
+
+🤖 AI Scraping: Darüşşafaka Cemiyeti
+📍 URL: https://www.darussafaka.org
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Darüşşafaka Bursu...
+
+📊 Bu kurum: 1 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[7/15] İstanbul Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://uploads.ibb.istanbulundefined
+
+🤖 AI Scraping: İstanbul Büyükşehir Belediyesi
+📍 URL: https://www.ibb.istanbul
+  ❌ JSON parse hatası: Extra data: line 4 column 1 (char 25)
+  📄 GPT Response (ilk 200 char): 
+{
+  "scholarships": []
+}
+``` 
+
+Not: Verilen metinde burs bilgilerine dair herhangi bir detay bulunmamaktadır. Bu nedenle JSON formatında burs bilgisi çıkarılamamıştır....
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[8/15] Ankara Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.ankara.bel.tr/assets/images/favicon/android-icon-192x192.png
+
+🤖 AI Scraping: Ankara Büyükşehir Belediyesi
+📍 URL: https://www.ankara.bel.tr
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Ankara Büyükşehir Belediyesi Bursu...
+
+📊 Bu kurum: 1 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[9/15] İzmir Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.izmir.bel.tr/Content/img/favicon.png
+
+🤖 AI Scraping: İzmir Büyükşehir Belediyesi
+📍 URL: https://www.izmir.bel.tr
+  ❌ JSON parse hatası: Extra data: line 4 column 1 (char 25)
+  📄 GPT Response (ilk 200 char): 
+{
+  "scholarships": []
+}
+``` 
+
+Verilen metinde burs bilgilerine dair herhangi bir bilgi bulunmamaktadır. Bu nedenle JSON formatında burs bilgisi çıkarılamamıştır....
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[10/15] Bursa Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.bursa.bel.tr/favicon.ico?v=2
+
+🤖 AI Scraping: Bursa Büyükşehir Belediyesi
+📍 URL: https://www.bursa.bel.tr
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ⏭️  Zaten var: Bursa Büyükşehir Belediyesi Bursu...
+
+📊 Bu kurum: 1 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[11/15] Antalya Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.antalya.bel.tr/images/logo/favicon.png
+
+🤖 AI Scraping: Antalya Büyükşehir Belediyesi
+📍 URL: https://www.antalya.bel.tr
+  ❌ JSON parse hatası: Extra data: line 4 column 1 (char 25)
+  📄 GPT Response (ilk 200 char): 
+{
+  "scholarships": []
+}
+``` 
+
+Not: Verilen metinde burs bilgilerine dair herhangi bir bilgi bulunmamaktadır. Bu nedenle JSON formatında burs bilgisi çıkarılamamıştır....
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[12/15] Konya Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.konya.bel.tr/favicon.ico
+
+🤖 AI Scraping: Konya Büyükşehir Belediyesi
+📍 URL: https://www.konya.bel.tr
+  ❌ JSON parse hatası: Expecting value: line 1 column 1 (char 0)
+  📄 GPT Response (ilk 200 char): Verilen metinde burs bilgilerine dair herhangi bir bilgi bulunmamaktadır. Bu nedenle, istenen JSON formatında burs bilgilerini oluşturmak mümkün değildir. Ancak, örnek bir JSON formatı aşağıda verilmi...
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[13/15] Gaziantep Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://eski.gaziantep.bel.tr/uploads/2020/07/favicon500_op.webp
+
+🤖 AI Scraping: Gaziantep Büyükşehir Belediyesi
+📍 URL: https://www.gaziantep.bel.tr
+  ❌ JSON parse hatası: Extra data: line 4 column 1 (char 25)
+  📄 GPT Response (ilk 200 char): 
+{
+  "scholarships": []
+}
+``` 
+
+Verilen metinde burs bilgilerine dair herhangi bir bilgi bulunmamaktadır. Bu nedenle burs bilgileri çıkarılamamıştır....
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 0 burs eklendi
+
+============================================================
+[14/15] Kayseri Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.kayseri.bel.tr/favicon.ico
+
+🤖 AI Scraping: Kayseri Büyükşehir Belediyesi
+📍 URL: https://www.kayseri.bel.tr
+  ✅ 1 burs bulundu
+
+💾 1 burs database'e kaydediliyor...
+  ✅ Kaydedildi: Kayseri Büyükşehir Belediyesi Bursu...
+
+📊 Bu kurum: 1 bulundu, 1 kaydedildi
+📊 Toplam ilerleme: 1 burs eklendi
+
+============================================================
+[15/15] Eskişehir Büyükşehir Belediyesi (belediye)
+============================================================
+  🔍 Favicon aranıyor...
+  ✅ Favicon bulundu: https://www.eskisehir.bel.tr/favicon.png
+
+🤖 AI Scraping: Eskişehir Büyükşehir Belediyesi
+📍 URL: https://www.eskisehir.bel.tr
+  ❌ JSON parse hatası: Extra data: line 4 column 1 (char 25)
+  📄 GPT Response (ilk 200 char): 
+{
+  "scholarships": []
+}
+``` 
+
+Verilen metinde burs bilgilerine dair herhangi bir bilgi bulunmamaktadır. Bu nedenle, burs bilgileri çıkarılamamıştır....
+
+📊 Bu kurum: 0 bulundu, 0 kaydedildi
+📊 Toplam ilerleme: 1 burs eklendi
+
+============================================================
+✅ TAMAMLANDI!
+📊 Toplam: 15 burs bulundu
+💾 Toplam: 1 burs kaydedildi
+============================================================

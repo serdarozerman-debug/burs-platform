@@ -1,0 +1,64 @@
+feat: Advanced scholarship system with AI scraper and 213 organizations
+
+## Major Features
+
+### 🤖 AI-Powered Scraper
+- GPT-4o-mini integration for intelligent data extraction
+- Automatic favicon detection and download
+- Document normalization (17 document types)
+- 213 scholarship organizations catalog
+
+### 📊 Database Schema Enhancement
+- 16 new columns for detailed scholarship metadata
+- Normalized document requirements (mandatory/optional/conditional)
+- Organization categories and detailed criteria
+- Support for age, GPA, exam scores, target universities
+
+### 🔄 Improved Pagination
+- Server-side pagination with total count
+- Dynamic page numbers based on API response
+- Lazy loading (fetch data on page change)
+- Performance optimized (10 items per page)
+
+### 🎨 Frontend Improvements
+- Favicon system with fallback (gradient + initial)
+- Filter sidebar matching card design
+- 2-column grid layout for scholarships
+- Enhanced UX with loading states
+
+### 📚 Organizations
+- 25 Foundations (Koç, Sabancı, TEV, Darüşşafaka...)
+- 15 Government institutions (TÜBİTAK, YTB, MEB...)
+- 15 Municipalities (İstanbul, Ankara, İzmir...)
+- 120+ State universities
+- 30+ Private universities  
+- 10 International programs (Fulbright, DAAD, Erasmus+...)
+
+## Technical Stack
+- Next.js 15 API Routes with pagination
+- OpenAI GPT-4o-mini for scraping
+- Supabase with enhanced schema
+- BeautifulSoup + Requests for web scraping
+- Document normalization system
+
+## Files Added/Modified
+- scripts/advanced_scraper.py (AI scraper)
+- scripts/document_normalizer.py (Normalization utility)
+- scripts/organizations.json (213 organizations)
+- scripts/FULL_MIGRATION.sql (Database migration)
+- app/api/scholarships/route.ts (Pagination support)
+- app/page.tsx (Dynamic pagination)
+- Multiple documentation files (ANALYSIS.md, etc.)
+
+## Migration Required
+Run `scripts/FULL_MIGRATION.sql` in Supabase SQL Editor before using new features.
+
+## Usage
+```bash
+# Test scraping (first 3 organizations)
+python3 scripts/advanced_scraper.py 3
+
+# Full scraping (all 213 organizations)
+python3 scripts/advanced_scraper.py
+```
+

@@ -6,6 +6,7 @@ export type FilterState = {
   search: string;
   type: string[];
   education_level: string[];
+  organization: string[];
   min_amount: number;
   max_amount: number;
   days_left: number | null;
@@ -59,6 +60,17 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
     });
   };
 
+  const handleOrganizationChange = (org: string) => {
+    const newOrgs = currentFilters.organization.includes(org)
+      ? currentFilters.organization.filter((o) => o !== org)
+      : [...currentFilters.organization, org];
+    
+    onFilterChange({
+      ...currentFilters,
+      organization: newOrgs,
+    });
+  };
+
   const handleAmountChange = (field: "min_amount" | "max_amount", value: number) => {
     onFilterChange({
       ...currentFilters,
@@ -78,6 +90,7 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
       search: "",
       type: [],
       education_level: [],
+      organization: [],
       min_amount: 0,
       max_amount: 25000,
       days_left: null,
@@ -98,6 +111,13 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
     { value: "yükseklisans", label: "Yüksek Lisans", count: 78 },
   ];
 
+  const organizations = [
+    { value: "TÜBİTAK", label: "TÜBİTAK", count: 14 },
+    { value: "TEV", label: "Türk Eğitim Vakfı", count: 8 },
+    { value: "VKV", label: "Vehbi Koç Vakfı", count: 6 },
+    { value: "Sabancı Vakfı", label: "Sabancı Vakfı", count: 5 },
+  ];
+
   const daysOptions = [
     { value: null, label: "Tümü", count: 180 },
     { value: 30, label: "30 Gün İçinde", count: 45 },
@@ -106,14 +126,14 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
   ];
 
   return (
-    <div className="sidebar-shadow none-shadow mb-30">
+    <div className="card-grid-2 hover-up" style={{ padding: "30px", borderRadius: "16px" }}>
       <div className="sidebar-filters">
         {/* Header */}
-        <div className="filter-block head-border mb-30">
-          <h5>
-            Advance Filter
+        <div className="filter-block mb-30" style={{ borderBottom: "1px solid #f0f0f0", paddingBottom: "20px" }}>
+          <h5 className="font-lg" style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 0 }}>
+            <span style={{ fontWeight: "700", fontSize: "18px" }}>Gelişmiş Filtreler</span>
             <Link href="#" onClick={(e) => { e.preventDefault(); clearFilters(); }}>
-              <span className="link-reset">Reset</span>
+              <span className="link-reset" style={{ fontSize: "14px", color: "#3b82f6" }}>Reset</span>
             </Link>
           </h5>
         </div>
@@ -127,14 +147,20 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
               onChange={(e) => setLocalSearch(e.target.value)}
               placeholder="Arama yapın..."
               className="form-control form-icons"
+              style={{ 
+                borderRadius: "12px",
+                padding: "12px 16px 12px 45px",
+                fontSize: "14px",
+                border: "1px solid #e0e0e0"
+              }}
             />
-            <i className="fi-rr-marker" />
+            <i className="fi-rr-marker" style={{ left: "16px" }} />
           </div>
         </div>
 
         {/* Scholarship Type Checkboxes */}
-        <div className="filter-block mb-20">
-          <h5 className="medium-heading mb-15">Burs Türü</h5>
+        <div className="filter-block mb-30">
+          <h5 className="medium-heading mb-20" style={{ fontWeight: "700", fontSize: "16px" }}>Burs Türü</h5>
           <div className="form-group">
             <ul className="list-checkbox">
               {scholarshipTypes.map((type) => (
@@ -156,8 +182,8 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
         </div>
 
         {/* Education Level Checkboxes */}
-        <div className="filter-block mb-20">
-          <h5 className="medium-heading mb-15">Eğitim Seviyesi</h5>
+        <div className="filter-block mb-30">
+          <h5 className="medium-heading mb-20" style={{ fontWeight: "700", fontSize: "16px" }}>Eğitim Seviyesi</h5>
           <div className="form-group">
             <ul className="list-checkbox">
               {educationLevels.map((level) => (
@@ -178,9 +204,32 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
           </div>
         </div>
 
+        {/* Organization Checkboxes */}
+        <div className="filter-block mb-30">
+          <h5 className="medium-heading mb-20" style={{ fontWeight: "700", fontSize: "16px" }}>Kurum İsmi</h5>
+          <div className="form-group">
+            <ul className="list-checkbox">
+              {organizations.map((org) => (
+                <li key={org.value}>
+                  <label className="cb-container">
+                    <input
+                      type="checkbox"
+                      checked={currentFilters.organization.includes(org.value)}
+                      onChange={() => handleOrganizationChange(org.value)}
+                    />
+                    <span className="text-small">{org.label}</span>
+                    <span className="checkmark" />
+                  </label>
+                  <span className="number-item">{org.count}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
         {/* Amount Range */}
-        <div className="filter-block mb-20">
-          <h5 className="medium-heading mb-25">Burs Miktarı</h5>
+        <div className="filter-block mb-30">
+          <h5 className="medium-heading mb-20" style={{ fontWeight: "700", fontSize: "16px" }}>Burs Miktarı</h5>
           <div className="list-checkbox pb-20">
             <div className="row position-relative mt-10 mb-20">
               <div className="col-sm-12 box-slider-range">
@@ -229,7 +278,7 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
 
         {/* Days Left Dropdown */}
         <div className="filter-block mb-30">
-          <h5 className="medium-heading mb-10">Son Başvuru Tarihi</h5>
+          <h5 className="medium-heading mb-20" style={{ fontWeight: "700", fontSize: "16px" }}>Son Başvuru Tarihi</h5>
           <div className="form-group">
             <ul className="list-checkbox">
               {daysOptions.map((option) => (
