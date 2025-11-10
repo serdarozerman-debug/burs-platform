@@ -294,7 +294,7 @@ export default function Home() {
                                           boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)"
                                         }}
                                       >
-                                        {scholarship.organization.charAt(0)}
+                                        {(scholarship.organization || 'K').charAt(0)}
                                       </div>
                                     </>
                                   ) : (
@@ -311,37 +311,37 @@ export default function Home() {
                                       fontWeight: "bold",
                                       boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)"
                                     }}>
-                                      {scholarship.organization.charAt(0)}
+                                      {(scholarship.organization || 'K').charAt(0)}
                                     </div>
                                   )}
                                 </div>
                                 <div className="right-info">
-                                  <span className="name-job">{scholarship.organization}</span>
+                                  <span className="name-job">{scholarship.organization || 'Kurum'}</span>
                                   <span className="location-small">İstanbul, TR</span>
                                 </div>
                               </div>
                               <div className="card-block-info" style={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
                                 <h4>
                                   <Link href={`/burs/${scholarship.id}`}>
-                                    <span>{scholarship.title}</span>
+                                    <span>{scholarship.title || 'Burs'}</span>
                                   </Link>
                                 </h4>
                                 <div className="mt-5">
-                                  <span className="card-briefcase">{scholarship.type}</span>
+                                  <span className="card-briefcase">{scholarship.type || 'akademik'}</span>
                                   <span className="card-time">
-                                    <span>{formatDate(scholarship.deadline)}</span>
+                                    <span>{scholarship.deadline ? formatDate(scholarship.deadline) : 'Devam ediyor'}</span>
                                   </span>
                                 </div>
                                 <p className="font-sm color-text-paragraph mt-10" style={{ flexGrow: 1 }}>
-                                  {scholarship.description.length > 120
+                                  {scholarship.description && scholarship.description.length > 120
                                     ? `${scholarship.description.substring(0, 120)}...`
-                                    : scholarship.description}
+                                    : (scholarship.description || 'Burs açıklaması yakında eklenecek.')}
                                 </p>
                                 <div className="card-2-bottom mt-20" style={{ marginTop: "auto" }}>
                                   <div className="row align-items-center">
                                     <div className="col-lg-5 col-5">
-                                      <span className="card-text-price">{scholarship.amount.toLocaleString("tr-TR")} ₺</span>
-                                      <span className="text-muted">/{scholarship.amount_type}</span>
+                                      <span className="card-text-price">{(scholarship.amount || 0).toLocaleString("tr-TR")} ₺</span>
+                                      <span className="text-muted">/{scholarship.amount_type || 'aylık'}</span>
                                     </div>
                                     <div className="col-lg-7 col-7 text-end">
                                       <div className="d-flex gap-2 justify-content-end">
