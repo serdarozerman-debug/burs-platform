@@ -1,5 +1,12 @@
 # Vercel Environment Variables Kurulum Rehberi
 
+## ⚠️ ÖNEMLİ: GitHub Değil, Vercel!
+
+**GitHub Environments** = GitHub Actions için (CI/CD workflows)
+**Vercel Environment Variables** = Next.js uygulamanız için (Production deployment)
+
+**Sizin ihtiyacınız Vercel Dashboard'da environment variables eklemek!**
+
 ## 🔐 Güvenlik Uyarısı
 **ÖNEMLİ**: `.env.local` dosyasını asla GitHub'a commit etmeyin! Bu dosya `.gitignore`'da olmalı.
 
@@ -7,9 +14,13 @@
 
 ### Adım 1: Vercel Dashboard'a Giriş
 1. https://vercel.com adresine gidin
-2. Projenizi seçin (burs-platform)
-3. **Settings** sekmesine tıklayın
-4. Sol menüden **Environment Variables** seçin
+2. GitHub hesabınızla giriş yapın
+3. Ana sayfada **"Add New Project"** veya mevcut projenizi seçin
+4. Projenizi seçin: **burs-platform** (veya oluşturduğunuz proje adı)
+
+### Adım 2: Settings Sekmesine Gidin
+1. Proje sayfasında üst menüden **"Settings"** sekmesine tıklayın
+2. Sol menüden **"Environment Variables"** seçin
 
 ### Adım 2: Environment Variables Ekleme
 
