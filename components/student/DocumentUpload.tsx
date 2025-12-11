@@ -100,7 +100,8 @@ export default function DocumentUpload({
       const fileName = `${studentId}/${category}/${Date.now()}.${fileExt}`;
 
       // Upload to Supabase Storage
-      const { data: uploadData, error: uploadError } = await supabase.storage
+      // eslint-disable-next-line @typescript-eslint/no-unused-vars
+      const { data: _uploadData, error: uploadError } = await supabase.storage
         .from("student-documents")
         .upload(fileName, file, {
           cacheControl: "3600",

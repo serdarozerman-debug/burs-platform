@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" width="200" height="60">
+  <!-- Background circle -->
+  <circle cx="30" cy="30" r="25" fill="#4A90E2" stroke="#2E5C8A" stroke-width="2"/>
+  
+  <!-- Letter B -->
+  <text x="30" y="38" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="white" text-anchor="middle">B</text>
+  
+  <!-- Text "BursBuldum" -->
+  <text x="70" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2E5C8A">BursBuldum</text>
+</svg>
+

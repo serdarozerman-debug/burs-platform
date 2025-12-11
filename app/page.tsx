@@ -1,13 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Layout from "@/components/Layout/Layout";
 import CategorySlider from "@/components/sliders/Category";
 import TopRekruterSlider from "@/components/sliders/TopRekruter";
 import BlogSlider from "@/components/sliders/Blog";
 import CategoryTab from "@/components/elements/CategoryTab";
 import Link from "next/link";
-import { Scholarship } from "@/lib/supabase";
+import { Scholarship, supabase } from "@/lib/supabase";
 import ScholarshipFilters, { FilterState } from "@/components/ScholarshipFilters";
 
 export default function Home() {
@@ -26,9 +26,14 @@ export default function Home() {
     max_amount: 25000,
     days_left: null,
   });
+  const [homepageContent, setHomepageContent] = useState<{
+    hero_title?: string;
+    hero_subtitle?: string;
+    hero_description?: string;
+  }>({});
 
   // Fetch scholarships with pagination
-  const fetchScholarships = async (page: number = currentPage) => {
+  const fetchScholarships = useCallback(async (page: number = 1) => {
     setLoading(true);
     try {
       const queryParams = new URLSearchParams();
@@ -63,7 +68,10 @@ export default function Home() {
 
       const url = `/api/scholarships?${queryParams.toString()}`;
       const response = await fetch(url);
-      if (!response.ok) throw new Error("Failed to fetch scholarships");
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({}));
+        throw new Error(errorData.error || "Failed to fetch scholarships");
+      }
       const result = await response.json();
       
       setScholarships(result.data || []);
@@ -74,20 +82,69 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-  };
-
-  // Fetch when filters change
-  useEffect(() => {
-    setCurrentPage(1);
-    fetchScholarships(1);
   }, [filters]);
+
+  // Fetch homepage content
+  useEffect(() => {
+    const fetchHomepageContent = async () => {
+      try {
+        const { data, error } = await supabase
+          .from('homepage_content')
+          .select('key, title, content');
+        
+        if (error) {
+          console.error('Homepage content fetch error:', error);
+          return;
+        }
+        
+        if (data && data.length > 0) {
+          const contentMap: any = {};
+          data.forEach((item: any) => {
+            if (item.key === 'hero_title') {
+              // hero_title için sadece content kullan (title label değil, içerik)
+              contentMap.hero_title = item.content || '';
+            } else if (item.key === 'hero_subtitle') {
+              // hero_subtitle için sadece content kullan
+              contentMap.hero_subtitle = item.content || '';
+            } else if (item.key === 'hero_description') {
+              // hero_description için content kullan
+              contentMap.hero_description = item.content || '';
+            }
+          });
+          setHomepageContent(contentMap);
+        }
+      } catch (err) {
+        console.error('Homepage content fetch error:', err);
+      }
+    };
+    fetchHomepageContent();
+    
+    // Her 5 saniyede bir yeniden yükle (güncellemeleri yakalamak için)
+    const interval = setInterval(fetchHomepageContent, 5000);
+    return () => clearInterval(interval);
+  }, []);
+
+  // Initial fetch on mount
+  useEffect(() => {
+    fetchScholarships(1);
+  }, []);
+
+  // Fetch when filters change (debounced for search)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setCurrentPage(1);
+      fetchScholarships(1);
+    }, filters.search ? 500 : 0); // Search için debounce, diğerleri için anında
+
+    return () => clearTimeout(timer);
+  }, [filters, fetchScholarships]);
 
   // Fetch when page changes
   useEffect(() => {
     if (currentPage > 1) {
       fetchScholarships(currentPage);
     }
-  }, [currentPage]);
+  }, [currentPage, fetchScholarships]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -96,6 +153,25 @@ export default function Home() {
       "Temmuz", "Ağustos", "Eylül", "Ekim", "Kasım", "Aralık"
     ];
     return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
+  };
+
+  const capitalize = (str: string) => {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
+  const formatEducationLevel = (level: string) => {
+    if (level === 'yükseklisans') return 'Yüksek Lisans';
+    return capitalize(level);
+  };
+
+  const formatAmountType = (type: string) => {
+    const typeMap: { [key: string]: string } = {
+      'aylık': 'Aylık',
+      'yıllık': 'Yıllık',
+      'tek seferlik': 'Tek Seferlik'
+    };
+    return typeMap[type] || capitalize(type);
   };
 
   // Pagination artık API'den geliyor, slice'a gerek yok
@@ -114,82 +190,48 @@ export default function Home() {
       <Layout>
         <div className="bg-homepage1" />
         
-        {/* Hero Section - Microfon Style */}
+        {/* Hero Section */}
         <section className="section-box mt-50">
           <div className="container">
             <div className="text-center mb-50">
-              <h1 className="heading-banner wow animate__animated animate__fadeInUp" style={{ fontSize: "48px", fontWeight: "700" }}>
-                Sana Uygun <span className="color-brand-2">Bursları Bul!</span>
+              <h1 className="heading-banner hero-title-split wow animate__animated animate__fadeInUp" style={{ fontSize: "48px", fontWeight: "700" }}>
+                {homepageContent.hero_title ? (
+                  (() => {
+                    // Metni kelimelere böl - ilk iki kelime açık mavi, geri kalanı koyu renk
+                    const words = homepageContent.hero_title.split(' ');
+                    if (words.length >= 2) {
+                      const firstTwoWords = words.slice(0, 2).join(' ');
+                      const restWords = words.slice(2).join(' ');
+                      
+                      return (
+                        <>
+                          <span className="first-part" style={{ color: "#4A90E2" }}>{firstTwoWords}</span>
+                          {restWords && (
+                            <>
+                              {' '}
+                              <span className="second-part" style={{ color: "#1a1a1a" }}>{restWords}</span>
+                            </>
+                          )}
+                        </>
+                      );
+                    } else {
+                      // Eğer 2'den az kelime varsa, ilk kelimeyi açık mavi yap
+                      return (
+                        <span className="first-part" style={{ color: "#4A90E2" }}>{homepageContent.hero_title}</span>
+                      );
+                    }
+                  })()
+                ) : (
+                  <>Sana Uygun <span className="color-brand-2">Bursları Bul!</span></>
+                )}
               </h1>
-              <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s" style={{ maxWidth: "800px", margin: "20px auto" }}>
-                Yurtiçi ve yurtdışındaki üniversite burslarına ve diğer tüm burslara kolayca ulaş! 
-                Burs başvuruları, yüksek lisans bursları, karşılıksız ve geri ödemesiz burs başvuruları 
-                ne zaman yapılıyor öğren ve hemen sana uygun burslara başvur.
-              </div>
-              
-              {/* Search and Filter Bar */}
-              <div className="mt-40 wow animate__animated animate__fadeIn" data-wow-delay=".2s">
-                <div className="bg-light p-4 rounded-3" style={{ maxWidth: "900px", margin: "0 auto" }}>
-                  <form className="row g-3 align-items-end">
-                    <div className="col-md-3">
-                      <input 
-                        type="text" 
-                        className="form-control form-input"
-                        placeholder="Burs Adı"
-                        value={filters.search}
-                        onChange={(e) => setFilters({...filters, search: e.target.value})}
-                      />
-                    </div>
-                    <div className="col-md-2">
-                      <select className="form-control form-input select-active">
-                        <option value="">Ülke</option>
-                        <option value="TR">Türkiye</option>
-                        <option value="US">ABD</option>
-                        <option value="GB">İngiltere</option>
-                        <option value="DE">Almanya</option>
-                      </select>
-                    </div>
-                    <div className="col-md-3">
-                      <select 
-                        className="form-control form-input select-active"
-                        value={filters.education_level[0] || ""}
-                        onChange={(e) => setFilters({...filters, education_level: e.target.value ? [e.target.value] : []})}
-                      >
-                        <option value="">Eğitim Seviyesi</option>
-                        <option value="lise">Lise</option>
-                        <option value="lisans">Lisans</option>
-                        <option value="yükseklisans">Yüksek Lisans</option>
-                      </select>
-                    </div>
-                    <div className="col-md-3">
-                      <select 
-                        className="form-control form-input select-active"
-                        value={filters.organization[0] || ""}
-                        onChange={(e) => setFilters({...filters, organization: e.target.value ? [e.target.value] : []})}
-                      >
-                        <option value="">Okul/Kurum</option>
-                        <option value="TÜBİTAK">TÜBİTAK</option>
-                        <option value="Türk Eğitim Vakfı">TEV</option>
-                        <option value="Vehbi Koç Vakfı">VKV</option>
-                        <option value="Sabancı Vakfı">Sabancı Vakfı</option>
-                      </select>
-                    </div>
-                    <div className="col-md-1">
-                      <button 
-                        type="button"
-                        onClick={() => {
-                          const element = document.getElementById('scholarships-section');
-                          if (element) {
-                            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                          }
-                        }}
-                        className="btn btn-default w-100"
-                      >
-                        Ara
-                      </button>
-                    </div>
-                  </form>
-                </div>
+              {homepageContent.hero_subtitle && (
+                <h2 className="heading-banner-subtitle mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".05s" style={{ fontSize: "32px", fontWeight: "600", color: "#4A90E2" }}>
+                  {homepageContent.hero_subtitle}
+                </h2>
+              )}
+              <div className="banner-description mt-20 wow animate__animated animate__fadeInUp" data-wow-delay=".1s" style={{ maxWidth: "800px", margin: "20px auto", fontSize: "18px", lineHeight: "1.6" }}>
+                {homepageContent.hero_description || "Yurtiçi ve yurtdışındaki üniversite burslarına ve diğer tüm burslara kolayca ulaş! Burs başvuruları, yüksek lisans bursları, karşılıksız ve geri ödemesiz burs başvuruları ne zaman yapılıyor öğren ve hemen sana uygun burslara başvur."}
               </div>
             </div>
           </div>
@@ -198,10 +240,6 @@ export default function Home() {
         {/* Diğer bölümleri kaldır, sadece burs listesine devam et */}
         <section id="scholarships-section" className="section-box mt-50">
           <div className="container">
-            <div className="text-center mb-30">
-              <h2 className="section-title mb-10 wow animate__animated animate__fadeInUp">Öne Çıkan Burslar</h2>
-              <p className="font-lg color-text-paragraph-2 wow animate__animated animate__fadeInUp">En çok aranan burs fırsatlarını keşfet</p>
-            </div>
             
             <div className="row">
               <div className="col-lg-3 col-md-12 mb-30">
@@ -327,7 +365,7 @@ export default function Home() {
                                   </Link>
                                 </h4>
                                 <div className="mt-5">
-                                  <span className="card-briefcase">{scholarship.type || 'akademik'}</span>
+                                  <span className="card-briefcase">{capitalize(scholarship.type || 'akademik')}</span>
                                   <span className="card-time">
                                     <span>{scholarship.deadline ? formatDate(scholarship.deadline) : 'Devam ediyor'}</span>
                                   </span>
@@ -340,8 +378,8 @@ export default function Home() {
                                 <div className="card-2-bottom mt-20" style={{ marginTop: "auto" }}>
                                   <div className="row align-items-center">
                                     <div className="col-lg-5 col-5">
-                                      <span className="card-text-price">{(scholarship.amount || 0).toLocaleString("tr-TR")} ₺</span>
-                                      <span className="text-muted">/{scholarship.amount_type || 'aylık'}</span>
+                                      <span className="card-text-price">{(scholarship.amount || 0).toLocaleString("tr-TR")}₺</span>
+                                      <span className="text-muted">/{formatAmountType(scholarship.amount_type || 'aylık')}</span>
                                     </div>
                                     <div className="col-lg-7 col-7 text-end">
                                       <div className="d-flex gap-2 justify-content-end">

@@ -36,6 +36,25 @@ export default function ScholarshipDetailPage() {
     return `${date.getDate()} ${months[date.getMonth()]} ${date.getFullYear()}`;
   };
 
+  const capitalize = (str: string) => {
+    if (!str) return '';
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
+  const formatEducationLevel = (level: string) => {
+    if (level === 'yükseklisans') return 'Yüksek Lisans';
+    return capitalize(level);
+  };
+
+  const formatAmountType = (type: string) => {
+    const typeMap: { [key: string]: string } = {
+      'aylık': 'Aylık',
+      'yıllık': 'Yıllık',
+      'tek seferlik': 'Tek Seferlik'
+    };
+    return typeMap[type] || capitalize(type);
+  };
+
   if (loading) {
     return (
       <Layout>
@@ -133,7 +152,7 @@ export default function ScholarshipDetailPage() {
                             </div>
                             <div className="sidebar-text-info">
                               <span className="text-description">Burs Türü</span>
-                              <strong className="small-heading">{scholarship.type}</strong>
+                              <strong className="small-heading">{capitalize(scholarship.type)}</strong>
                             </div>
                           </li>
                           <li>
@@ -142,7 +161,7 @@ export default function ScholarshipDetailPage() {
                             </div>
                             <div className="sidebar-text-info">
                               <span className="text-description">Eğitim Seviyesi</span>
-                              <strong className="small-heading">{scholarship.education_level}</strong>
+                              <strong className="small-heading">{formatEducationLevel(scholarship.education_level)}</strong>
                             </div>
                           </li>
                           <li>
@@ -167,7 +186,7 @@ export default function ScholarshipDetailPage() {
                             <div className="sidebar-text-info">
                               <span className="text-description">Burs Miktarı</span>
                               <strong className="small-heading">
-                                {scholarship.amount.toLocaleString("tr-TR")} ₺ / {scholarship.amount_type}
+                                {scholarship.amount.toLocaleString("tr-TR")}₺ / {formatAmountType(scholarship.amount_type)}
                               </strong>
                             </div>
                           </li>
@@ -245,7 +264,7 @@ export default function ScholarshipDetailPage() {
                         <div className="job-overview-text">
                           <span className="job-overview-title">Burs Miktarı</span>
                           <span className="job-overview-value">
-                            {scholarship.amount.toLocaleString("tr-TR")} ₺
+                            {scholarship.amount.toLocaleString("tr-TR")}₺
                           </span>
                         </div>
                       </div>
@@ -255,7 +274,7 @@ export default function ScholarshipDetailPage() {
                         </div>
                         <div className="job-overview-text">
                           <span className="job-overview-title">Ödeme Tipi</span>
-                          <span className="job-overview-value">{scholarship.amount_type}</span>
+                          <span className="job-overview-value">{formatAmountType(scholarship.amount_type)}</span>
                         </div>
                       </div>
                       <div className="job-overview-card">
@@ -264,7 +283,7 @@ export default function ScholarshipDetailPage() {
                         </div>
                         <div className="job-overview-text">
                           <span className="job-overview-title">Burs Türü</span>
-                          <span className="job-overview-value">{scholarship.type}</span>
+                          <span className="job-overview-value">{capitalize(scholarship.type)}</span>
                         </div>
                       </div>
                       <div className="job-overview-card">
@@ -273,7 +292,7 @@ export default function ScholarshipDetailPage() {
                         </div>
                         <div className="job-overview-text">
                           <span className="job-overview-title">Eğitim</span>
-                          <span className="job-overview-value">{scholarship.education_level}</span>
+                          <span className="job-overview-value">{formatEducationLevel(scholarship.education_level)}</span>
                         </div>
                       </div>
                     </div>

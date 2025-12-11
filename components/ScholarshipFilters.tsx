@@ -19,24 +19,128 @@ interface ScholarshipFiltersProps {
 
 const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFiltersProps) => {
   const [localSearch, setLocalSearch] = useState(currentFilters.search);
-  const [debouncedSearch, setDebouncedSearch] = useState(currentFilters.search);
+  const [organizations, setOrganizations] = useState<Array<{ value: string; label: string; count: number }>>([]);
+  const [scholarshipTypes, setScholarshipTypes] = useState<Array<{ value: string; label: string; count: number }>>([
+    { value: "akademik", label: "Akademik", count: 0 },
+    { value: "engelli", label: "Engelli", count: 0 },
+    { value: "ihtiyaç", label: "İhtiyaç", count: 0 },
+  ]);
+  const [educationLevels, setEducationLevels] = useState<Array<{ value: string; label: string; count: number }>>([
+    { value: "lise", label: "Lise", count: 0 },
+    { value: "lisans", label: "Lisans", count: 0 },
+    { value: "yükseklisans", label: "Yüksek Lisans", count: 0 },
+  ]);
 
-  // Debounce search input
+  // Sync localSearch with currentFilters.search when it changes externally
+  useEffect(() => {
+    setLocalSearch(currentFilters.search);
+  }, [currentFilters.search]);
+
+  // Debounce search input and update filters
   useEffect(() => {
     const timer = setTimeout(() => {
-      setDebouncedSearch(localSearch);
+      if (localSearch !== currentFilters.search) {
+        onFilterChange({
+          ...currentFilters,
+          search: localSearch,
+        });
+      }
     }, 300);
 
     return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [localSearch]);
 
-  // Update filters when debounced search changes
+  // Fetch organizations and filter options from API
   useEffect(() => {
-    onFilterChange({
-      ...currentFilters,
-      search: debouncedSearch,
-    });
-  }, [debouncedSearch]);
+    const fetchFilterOptions = async () => {
+      try {
+        // Fetch all scholarships to get filter options
+        const response = await fetch('/api/scholarships?page=1&limit=1000');
+        if (!response.ok) return;
+        
+        const data = await response.json();
+        const scholarships = data.data || [];
+
+        // Extract unique organizations
+        const orgMap = new Map<string, number>();
+        scholarships.forEach((s: any) => {
+          if (s.organization?.name) {
+            const orgName = s.organization.name;
+            orgMap.set(orgName, (orgMap.get(orgName) || 0) + 1);
+          }
+        });
+        
+        const orgs = Array.from(orgMap.entries())
+          .map(([name, count]) => ({
+            value: name,
+            label: name,
+            count: count
+          }))
+          .sort((a, b) => {
+            // Türkçe karakterleri düzgün sıralamak için localeCompare kullan
+            return a.label.localeCompare(b.label, 'tr', { sensitivity: 'base' });
+          });
+        
+        setOrganizations(orgs);
+
+        // Extract unique types
+        const typeMap = new Map<string, number>();
+        scholarships.forEach((s: any) => {
+          if (s.type) {
+            typeMap.set(s.type, (typeMap.get(s.type) || 0) + 1);
+          }
+        });
+        
+        const types = Array.from(typeMap.entries())
+          .map(([value, count]) => ({
+            value,
+            label: value.charAt(0).toUpperCase() + value.slice(1),
+            count
+          }))
+          .sort((a, b) => {
+            // Alfabetik sıralama
+            return a.label.localeCompare(b.label, 'tr', { sensitivity: 'base' });
+          });
+        
+        setScholarshipTypes(types);
+
+        // Extract unique education levels
+        const levelMap = new Map<string, number>();
+        scholarships.forEach((s: any) => {
+          if (s.education_level) {
+            levelMap.set(s.education_level, (levelMap.get(s.education_level) || 0) + 1);
+          }
+        });
+        
+        const levels = Array.from(levelMap.entries())
+          .map(([value, count]) => ({
+            value,
+            label: value === 'yükseklisans' ? 'Yüksek Lisans' : value.charAt(0).toUpperCase() + value.slice(1),
+            count
+          }))
+          .sort((a, b) => {
+            // Eğitim seviyesine göre mantıksal sıralama: lise -> lisans -> yükseklisans -> doktora
+            const order: { [key: string]: number } = {
+              'lise': 1,
+              'önlisans': 2,
+              'lisans': 3,
+              'yükseklisans': 4,
+              'doktora': 5
+            };
+            const orderA = order[a.value.toLowerCase()] || 99;
+            const orderB = order[b.value.toLowerCase()] || 99;
+            return orderA - orderB;
+          });
+        
+        setEducationLevels(levels);
+      } catch (error) {
+        console.error('Error fetching filter options:', error);
+      }
+    };
+
+    fetchFilterOptions();
+  }, []);
 
   const handleTypeChange = (type: string) => {
     const newTypes = currentFilters.type.includes(type)
@@ -99,24 +203,7 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
     onFilterChange(clearedFilters);
   };
 
-  const scholarshipTypes = [
-    { value: "akademik", label: "Akademik", count: 45 },
-    { value: "engelli", label: "Engelli", count: 23 },
-    { value: "ihtiyaç", label: "İhtiyaç", count: 67 },
-  ];
-
-  const educationLevels = [
-    { value: "lise", label: "Lise", count: 89 },
-    { value: "lisans", label: "Lisans", count: 156 },
-    { value: "yükseklisans", label: "Yüksek Lisans", count: 78 },
-  ];
-
-  const organizations = [
-    { value: "TÜBİTAK", label: "TÜBİTAK", count: 14 },
-    { value: "TEV", label: "Türk Eğitim Vakfı", count: 8 },
-    { value: "VKV", label: "Vehbi Koç Vakfı", count: 6 },
-    { value: "Sabancı Vakfı", label: "Sabancı Vakfı", count: 5 },
-  ];
+  // Use state variables instead of constants
 
   const daysOptions = [
     { value: null, label: "Tümü", count: 180 },

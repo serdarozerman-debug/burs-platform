@@ -22,6 +22,7 @@ export async function GET(request: NextRequest) {
       .from('scholarships')
       .select('*', { count: 'exact', head: true })
       .eq('is_active', true)
+      .eq('is_published', true)
     
     // Data query - with organization join
     let query = supabase
@@ -36,9 +37,28 @@ export async function GET(request: NextRequest) {
         )
       `)
       .eq('is_active', true)
+      .eq('is_published', true)
+
+    // Organization name'lerden organization_id'leri bul (case-insensitive exact match)
+    let organizationIds: string[] = []
+    if (organizations.length > 0) {
+      // Her bir organization name için case-insensitive exact match yap
+      const orgPromises = organizations.map(async (orgName: string) => {
+        const orgResult = await supabase
+          .from('organizations')
+          .select('id')
+          .ilike('name', orgName)
+          .limit(1)
+        
+        return orgResult.data?.[0]?.id
+      })
+      
+      const orgIds = await Promise.all(orgPromises)
+      organizationIds = orgIds.filter((id): id is string => id !== undefined)
+    }
 
     // Filtreleri hem count hem data query'sine uygula
-    const applyFilters = (q: any) => {
+    const applyFilters = (q: any, orgIds: string[] = []) => {
       // Search filtresi
       if (search) {
         q = q.ilike('title', `%${search}%`)
@@ -54,9 +74,9 @@ export async function GET(request: NextRequest) {
         q = q.in('education_level', educationLevels)
       }
 
-      // Organization filtresi
-      if (organizations.length > 0) {
-        q = q.in('organization', organizations)
+      // Organization filtresi - organization_id'ye göre filtreleme
+      if (orgIds.length > 0) {
+        q = q.in('organization_id', orgIds)
       }
 
       // Amount filtreleri
@@ -92,8 +112,8 @@ export async function GET(request: NextRequest) {
     }
     
     // Filtreleri uygula
-    countQuery = applyFilters(countQuery)
-    query = applyFilters(query)
+    countQuery = applyFilters(countQuery, organizationIds)
+    query = applyFilters(query, organizationIds)
 
     // Sıralama
     switch (sort) {
@@ -130,6 +150,15 @@ export async function GET(request: NextRequest) {
       )
     }
 
+    if (countResult.error) {
+      console.error('Supabase count error:', countResult.error)
+      return NextResponse.json(
+        { error: countResult.error.message },
+        { status: 500 }
+      )
+    }
+
+
     // Response with count
     return NextResponse.json({
       data: dataResult.data || [],
@@ -138,10 +167,11 @@ export async function GET(request: NextRequest) {
       limit: limit,
       totalPages: Math.ceil((countResult.count || 0) / limit)
     })
-  } catch (error) {
+  } catch (error: any) {
     console.error('API error:', error)
+    console.error('Error stack:', error?.stack)
     return NextResponse.json(
-      { error: 'Internal server error' },
+      { error: error?.message || 'Internal server error', details: error?.toString() },
       { status: 500 }
     )
   }

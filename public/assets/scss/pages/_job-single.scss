@@ -276,6 +276,18 @@
     right: 0px;
 }
 
+.job-overview-title,
+.text-description {
+    white-space: normal !important;
+    word-spacing: normal !important;
+    letter-spacing: normal !important;
+}
+
+.job-overview-value,
+.small-heading {
+    margin-left: 4px;
+}
+
 .job-overview {
     border: thin solid $color-border-2;
     // box-shadow: $box-shadow-2;

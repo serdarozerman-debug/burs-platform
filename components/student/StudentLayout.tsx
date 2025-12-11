@@ -21,7 +21,8 @@ interface StudentLayoutProps {
 }
 
 export default function StudentLayout({ children }: StudentLayoutProps) {
-  const { user, logout, loading: authLoading } = useAuth();
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const { user: _user, logout, loading: authLoading } = useAuth();
   const { student, loading: studentLoading } = useStudent();
   const pathname = usePathname();
   const router = useRouter();

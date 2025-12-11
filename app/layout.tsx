@@ -8,10 +8,12 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Jobbox - Job Portal HTML Template",
-  description: "Jobbox - Job Portal HTML Template",
+  title: "BursBuldum - Burs Fırsatları Platformu",
+  description: "BursBuldum - Yurtiçi ve yurtdışındaki üniversite burslarına ve diğer tüm burslara kolayca ulaşın",
   icons: {
-    icon: '/favicon.ico',
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+    ],
   },
 };
 

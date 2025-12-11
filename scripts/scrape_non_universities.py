@@ -120,9 +120,12 @@ Aşağıdaki web sayfası metninden burs bilgilerini çıkar. Bu sayfa {org_name
 7. Gerekli belgeler (liste)
 8. Başvuru koşulları
 9. Detaylı açıklama
+10. Başvuru linki (application_url) - ÖNEMLİ: Bu bursun spesifik başvuru sayfasının tam URL'i olmalı. Eğer sayfada "Başvur", "Detaylı Bilgi", "Başvuru Formu" gibi linkler varsa, o linklerin URL'lerini kullan. Ana sayfa URL'i DEĞİL, direkt burs başvuru sayfasının URL'i olmalı.
 
 WEB SAYFA METNİ:
 {text}
+
+KAYNAK URL: {url}
 
 JSON FORMATINDA VER:
 {{
@@ -138,7 +141,8 @@ JSON FORMATINDA VER:
       "description": "Kısa açıklama",
       "detailed_description": "Detaylı açıklama",
       "documents_required": ["kimlik belgesi", "öğrenci belgesi"],
-      "application_requirements": "Başvuru koşulları"
+      "application_requirements": "Başvuru koşulları",
+      "application_url": "https://example.com/burs/burs-adi"  // Bu bursun spesifik başvuru sayfasının URL'i
     }}
   ]
 }}
@@ -167,6 +171,8 @@ JSON FORMATINDA VER:
         for scholarship in scholarships:
             scholarship['organization'] = org_name
             scholarship['organization_logo'] = favicon_url
+            # Eğer AI'dan application_url gelmediyse veya geçersizse, kaynak URL'i kullan
+            if not scholarship.get('application_url') or not scholarship['application_url'].startswith('http'):
             scholarship['application_url'] = url
             scholarship['is_active'] = True
             scholarship['has_api_integration'] = False
@@ -185,26 +191,150 @@ JSON FORMATINDA VER:
     except json.JSONDecodeError as e:
         print(f"  ❌ JSON parse hatası: {e}")
         print(f"  📄 GPT Response (ilk 200 char): {result_text[:200]}...")
+        
+        # JSON parse hatası durumunda alternatif parse dene
+        try:
+            # Markdown code block'ları temizle
+            cleaned = result_text.strip()
+            if '```json' in cleaned:
+                cleaned = cleaned.split('```json')[1].split('```')[0].strip()
+            elif '```' in cleaned:
+                cleaned = cleaned.split('```')[1].split('```')[0].strip()
+            
+            # JSON objesi içinde scholarships array'i ara
+            import re
+            json_match = re.search(r'\{[^{}]*"scholarships"[^{}]*\[.*?\]', cleaned, re.DOTALL)
+            if json_match:
+                result = json.loads(json_match.group())
+                scholarships = result.get('scholarships', [])
+                if scholarships:
+                    print(f"  ✅ Alternatif parse ile {len(scholarships)} burs bulundu")
+                    for scholarship in scholarships:
+                        # organization ve organization_logo artık kullanılmıyor, organization_id kullanılacak
+                        scholarship['application_url'] = url
+                        scholarship['is_active'] = True
+                        scholarship['has_api_integration'] = False
+                    return scholarships
+        except:
+            pass
+        
         return []
     except Exception as e:
         print(f"  ❌ Hata: {str(e)[:100]}")
         return []
 
 
-def save_to_database(scholarships: list):
+def validate_and_normalize_amount(amount):
+    """Amount alanını validate et ve sayıya çevir"""
+    if amount is None:
+        return 0
+    
+    # Eğer zaten sayıysa
+    if isinstance(amount, (int, float)):
+        return float(amount)
+    
+    # String ise
+    if isinstance(amount, str):
+        # "Tam finansman", "Belirtilmemiş" gibi metinleri 0 yap
+        amount_lower = amount.lower().strip()
+        if any(keyword in amount_lower for keyword in ['tam finansman', 'belirtilmemiş', 'belirtilmemiş', 'yok', 'none', 'n/a']):
+            return 0
+        
+        # Sayıları çıkar (örn: "15.000 TL" -> 15000)
+        import re
+        numbers = re.findall(r'\d+[.,]?\d*', amount.replace(',', '.'))
+        if numbers:
+            try:
+                return float(numbers[0].replace(',', '.'))
+            except:
+                return 0
+    
+    return 0
+
+
+def get_or_create_organization(org_name: str, org_website: str = None, logo_url: str = None):
+    """Organization'ı bul veya oluştur, ID döndür"""
+    try:
+        # Önce var mı kontrol et
+        existing = supabase.table('organizations')\
+            .select('id')\
+            .eq('name', org_name)\
+            .execute()
+        
+        if existing.data and len(existing.data) > 0:
+            org_id = existing.data[0]['id']
+            
+            # Logo varsa güncelle
+            if logo_url:
+                supabase.table('organizations')\
+                    .update({'logo_url': logo_url})\
+                    .eq('id', org_id)\
+                    .execute()
+            
+            return org_id
+        
+        # Yoksa oluştur
+        new_org = {
+            'name': org_name,
+            'website': org_website,
+            'logo_url': logo_url,
+            'is_active': True
+        }
+        
+        result = supabase.table('organizations')\
+            .insert(new_org)\
+            .select('id')\
+            .execute()
+        
+        if result.data and len(result.data) > 0:
+            return result.data[0]['id']
+        
+        return None
+        
+    except Exception as e:
+        print(f"  ⚠️  Organization kayıt hatası ({org_name}): {e}")
+        return None
+
+
+def save_to_database(scholarships: list, org_name: str, org_website: str = None, logo_url: str = None):
     """Bursları Supabase'e kaydet"""
     if not scholarships:
         return 0
     
     print(f"\n💾 {len(scholarships)} burs database'e kaydediliyor...")
+    
+    # Önce organization'ı bul/oluştur
+    organization_id = get_or_create_organization(org_name, org_website, logo_url)
+    
+    if not organization_id:
+        print(f"  ❌ Organization oluşturulamadı: {org_name}")
+        return 0
+    
     saved_count = 0
     
     for scholarship in scholarships:
         try:
+            # Amount validation ve normalization
+            if 'amount' in scholarship:
+                scholarship['amount'] = validate_and_normalize_amount(scholarship['amount'])
+            
+            # Zorunlu alanları kontrol et
+            if not scholarship.get('title'):
+                print(f"  ⚠️  Eksik title, atlandi: {scholarship.get('title', 'Unknown')}")
+                continue
+            
+            # Organization_id ekle, organization_logo kaldır
+            scholarship['organization_id'] = organization_id
+            if 'organization_logo' in scholarship:
+                del scholarship['organization_logo']
+            if 'organization' in scholarship:
+                del scholarship['organization']
+            
+            # Duplicate kontrolü
             existing = supabase.table('scholarships')\
                 .select('id')\
                 .eq('title', scholarship['title'])\
-                .eq('organization', scholarship['organization'])\
+                .eq('organization_id', organization_id)\
                 .execute()
             
             if existing.data:
@@ -279,8 +409,13 @@ def scrape_non_universities(limit: int = None):
         for scholarship in scholarships:
             scholarship['organization_category'] = org.get('category', 'diğer')
         
-        # Database'e kaydet
-        saved = save_to_database(scholarships)
+        # Database'e kaydet (organization bilgileriyle birlikte)
+        saved = save_to_database(
+            scholarships=scholarships,
+            org_name=org['name'],
+            org_website=org.get('website'),
+            logo_url=favicon_url
+        )
         
         total_scholarships += len(scholarships)
         total_saved += saved

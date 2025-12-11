@@ -1,8 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap");
 
 .swiper-grid-jobobx {
   width: 100%;
@@ -12,4 +12,12 @@
 .swiper-grid-jobobx .swiper-slide {
   /* background: #eee; */
   height: calc((100% - 30px) / 2) !important;
+}
+
+/* Hero title split colors */
+.hero-title-split .first-part {
+  color: #4A90E2 !important;
+}
+.hero-title-split .second-part {
+  color: #1a1a1a !important;
 }

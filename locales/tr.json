@@ -1,0 +1,49 @@
+{
+    "common": {
+      "welcome": "Hoş Geldiniz",
+      "hello": "Merhaba",
+      "login": "Giriş Yap",
+      "logout": "Çıkış Yap",
+      "register": "Kayıt Ol",
+      "save": "Kaydet",
+      "cancel": "İptal",
+      "delete": "Sil",
+      "edit": "Düzenle",
+      "view": "Görüntüle",
+      "search": "Ara",
+      "filter": "Filtrele",
+      "loading": "Yükleniyor...",
+      "error": "Hata oluştu",
+      "success": "Başarılı!",
+      "dashboard": "Gösterge Paneli",
+      "profile": "Profil",
+      "settings": "Ayarlar"
+    },
+    "auth": {
+      "loginTitle": "Giriş Yap",
+      "registerTitle": "Kayıt Ol",
+      "email": "E-posta",
+      "password": "Şifre",
+      "forgotPassword": "Şifremi Unuttum"
+    },
+    "admin": {
+      "dashboard": "Yönetim Paneli",
+      "organizations": "Kurumlar",
+      "scholarships": "Burslar",
+      "users": "Kullanıcılar",
+      "moderation": "Moderasyon",
+      "analytics": "Analitik",
+      "settings": "Ayarlar"
+    },
+    "student": {
+      "dashboard": "Gösterge Paneli",
+      "applications": "Başvurularım",
+      "wallet": "Cüzdanım",
+      "favorites": "Favorilerim"
+    },
+    "organization": {
+      "dashboard": "Gösterge Paneli",
+      "myScholarships": "Burslarım",
+      "applications": "Başvurular"
+    }
+  }
