@@ -50,18 +50,26 @@
 
 #### Yöntem 1: GitHub ile (Önerilen)
 ```bash
-# 1. Projeyi GitHub'a push edin
+# 1. Mevcut değişiklikleri commit edin
 cd "/Users/serdarozerman/Desktop/jobbox-react/1. JobBox-Nextjs 15 (app router)"
-git init
 git add .
-git commit -m "Initial commit"
-git remote add origin https://github.com/YOUR_USERNAME/bursbuldum.git
-git push -u origin main
+git commit -m "feat: BursBuldum rebranding and production ready"
 
-# 2. Vercel Dashboard'a gidin
-# 3. "Add New Project" tıklayın
-# 4. GitHub repository'nizi seçin
-# 5. "Import" tıklayın
+# 2. Main branch'e geçin veya yeni branch oluşturun
+git checkout main || git checkout -b main
+git merge feature/v3-implementation  # Eğer feature branch'inden merge ediyorsanız
+
+# 3. GitHub'a push edin
+git push origin main
+
+# Not: Remote zaten ayarlı: https://github.com/serdarozerman-debug/burs-platform.git
+# Eğer repository adını değiştirmek isterseniz:
+# git remote set-url origin https://github.com/YOUR_USERNAME/bursbuldum.git
+
+# 4. Vercel Dashboard'a gidin
+# 5. "Add New Project" tıklayın
+# 6. GitHub repository'nizi seçin (serdarozerman-debug/burs-platform)
+# 7. "Import" tıklayın
 ```
 
 #### Yöntem 2: Vercel CLI ile
