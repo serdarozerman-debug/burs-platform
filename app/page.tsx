@@ -26,6 +26,7 @@ export default function Home() {
     max_amount: 25000,
     days_left: null,
   });
+  const [sortBy, setSortBy] = useState<string>("created_desc"); // Sıralama state'i
   const [homepageContent, setHomepageContent] = useState<{
     hero_title?: string;
     hero_subtitle?: string;
@@ -65,6 +66,9 @@ export default function Home() {
       if (filters.days_left !== null) {
         queryParams.append("days_left", filters.days_left.toString());
       }
+      
+      // Sıralama parametresi ekle
+      queryParams.append("sort", sortBy);
 
       const url = `/api/scholarships?${queryParams.toString()}`;
       const response = await fetch(url);
@@ -82,7 +86,7 @@ export default function Home() {
     } finally {
       setLoading(false);
     }
-  }, [filters]);
+  }, [filters, sortBy]);
 
   // Fetch homepage content
   useEffect(() => {
@@ -249,6 +253,44 @@ export default function Home() {
                 />
               </div>
               <div className="col-lg-9 col-md-12" style={{ minHeight: "auto" }}>
+                {/* Sıralama Barı */}
+                <div className="d-flex justify-content-between align-items-center mb-30" style={{ 
+                  background: "#fff", 
+                  padding: "20px", 
+                  borderRadius: "8px",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.08)"
+                }}>
+                  <div>
+                    <h5 className="mb-0" style={{ fontSize: "18px", fontWeight: "600" }}>
+                      {totalCount} Burs Bulundu
+                    </h5>
+                  </div>
+                  <div className="d-flex align-items-center gap-2">
+                    <label htmlFor="sort-select" style={{ fontSize: "14px", fontWeight: "500", marginRight: "10px" }}>
+                      Sırala:
+                    </label>
+                    <select
+                      id="sort-select"
+                      className="form-select"
+                      value={sortBy}
+                      onChange={(e) => setSortBy(e.target.value)}
+                      style={{
+                        width: "auto",
+                        padding: "8px 16px",
+                        border: "1px solid #ddd",
+                        borderRadius: "6px",
+                        fontSize: "14px",
+                        cursor: "pointer"
+                      }}
+                    >
+                      <option value="created_desc">🆕 En Yeni Burslar</option>
+                      <option value="deadline_asc">⏰ Son Başvuru Yakın</option>
+                      <option value="amount_desc">💰 Burs Miktarı (Yüksek → Düşük)</option>
+                      <option value="amount_asc">💰 Burs Miktarı (Düşük → Yüksek)</option>
+                    </select>
+                  </div>
+                </div>
+
                 {loading ? (
                   <div className="text-center mt-50">
                     <div className="spinner-border text-primary" role="status">

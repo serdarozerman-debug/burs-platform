@@ -13,7 +13,7 @@ export async function GET(request: NextRequest) {
     const minAmount = searchParams.get('min_amount')
     const maxAmount = searchParams.get('max_amount')
     const daysLeft = searchParams.get('days_left')
-    const sort = searchParams.get('sort') ?? 'deadline_asc'
+    const sort = searchParams.get('sort') ?? 'created_desc' // Varsayılan: En yeni burslar
     const page = parseInt(searchParams.get('page') ?? '1')
     const limit = parseInt(searchParams.get('limit') ?? '10')
 
