@@ -20,14 +20,14 @@ supabase: Client = create_client(supabase_url, supabase_key)
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 openai_client = OpenAI(api_key=openai_api_key)
 
-# Scrape edilecek siteler - 17 doğrulanmış kurum
+# Scrape edilecek siteler - 23 doğrulanmış kurum
 SITES = [
     # Devlet/Kamu (3)
     "https://www.tubitak.gov.tr/tr/burslar",
     "https://www.meb.gov.tr/",
     "https://www.turkiyeburslari.gov.tr/burslari-kesfet",
     
-    # Vakıflar (8)
+    # Vakıflar (14)
     "https://www.tev.org.tr/burs-programlari",
     "https://www.sabancivakfi.org/programlarimiz/egitim",
     "https://www.vkv.org.tr/",
@@ -36,6 +36,12 @@ SITES = [
     "https://www.tog.org.tr/",
     "https://www.losev.org.tr/",
     "https://www.turgev.org/",
+    "https://bkv.org.tr",  # Borusan Kocabıyık Vakfı
+    "https://icvakfi.org.tr",  # İbrahim Çeçen Vakfı
+    "https://rev.org.tr",  # Rönesans Eğitim Vakfı
+    "https://ted.org.tr",  # Türk Eğitim Derneği
+    "https://alarko.com.tr",  # Alarko Eğitim-Kültür Vakfı
+    "https://cometogelisim.com",  # Come to Gelişim
     
     # Belediyeler (3)
     "https://www.ibb.istanbul/",
