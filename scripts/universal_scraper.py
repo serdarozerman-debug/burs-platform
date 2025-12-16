@@ -8,23 +8,46 @@ import json
 
 load_dotenv('.env.local')
 
-# Supabase
+# Supabase - Use SERVICE_ROLE_KEY to bypass RLS
 supabase_url = os.environ.get("NEXT_PUBLIC_SUPABASE_URL")
-supabase_key = os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
+supabase_key = os.environ.get("SUPABASE_SERVICE_ROLE_KEY")  # Changed from ANON_KEY
+if not supabase_key:
+    print("⚠️ SUPABASE_SERVICE_ROLE_KEY bulunamadi, ANON_KEY kullaniliyor...")
+    supabase_key = os.environ.get("NEXT_PUBLIC_SUPABASE_ANON_KEY")
 supabase: Client = create_client(supabase_url, supabase_key)
 
 # OpenAI
 openai_api_key = os.environ.get("OPENAI_API_KEY")
 openai_client = OpenAI(api_key=openai_api_key)
 
-# Scrape edilecek siteler
+# Scrape edilecek siteler - 17 doğrulanmış kurum
 SITES = [
-    "https://www.tev.org.tr/",
+    # Devlet/Kamu (3)
+    "https://www.tubitak.gov.tr/tr/burslar",
+    "https://www.meb.gov.tr/",
+    "https://www.turkiyeburslari.gov.tr/burslari-kesfet",
+    
+    # Vakıflar (8)
+    "https://www.tev.org.tr/burs-programlari",
+    "https://www.sabancivakfi.org/programlarimiz/egitim",
     "https://www.vkv.org.tr/",
-    "https://www.turkiyeburslari.gov.tr/",
-    "https://www.sabancivakfi.org/",
-    "https://www.ibb.istanbul/EgitimDestek",
-    "https://www.ankara.bel.tr/egitim-burslari",
+    "https://tegv.org/",
+    "https://www.acev.org/",
+    "https://www.tog.org.tr/",
+    "https://www.losev.org.tr/",
+    "https://www.turgev.org/",
+    
+    # Belediyeler (3)
+    "https://www.ibb.istanbul/",
+    "https://www.izmir.bel.tr/",
+    "https://www.antalya.bel.tr/",
+    
+    # Yabancı/Uluslararası (2)
+    "https://www.fulbright.org.tr/",
+    "https://www.daad.de/en/",
+    
+    # Özel Sektör (1)
+    "https://www.turkcell.com.tr/",
 ]
 
 def fetch_page(url):
@@ -173,6 +196,53 @@ Sadece geçerli JSON array döndür, başka açıklama yapma:
         traceback.print_exc()
         return []
 
+def create_slug(text):
+    """Create URL-friendly slug from text"""
+    import re
+    slug = text.lower()
+    # Türkçe karakterleri değiştir
+    replacements = {
+        'ç': 'c', 'ğ': 'g', 'ı': 'i', 'ö': 'o', 'ş': 's', 'ü': 'u',
+        'Ç': 'c', 'Ğ': 'g', 'İ': 'i', 'Ö': 'o', 'Ş': 's', 'Ü': 'u'
+    }
+    for tr_char, en_char in replacements.items():
+        slug = slug.replace(tr_char, en_char)
+    # Özel karakterleri kaldır, boşlukları tire yap
+    slug = re.sub(r'[^\w\s-]', '', slug)
+    slug = re.sub(r'[-\s]+', '-', slug)
+    return slug.strip('-')[:100]  # Max 100 karakter
+
+def get_or_create_organization(org_name):
+    """Organization ID'sini al veya yeni organization olustur"""
+    try:
+        # Oncelikle mevcut organization'i ara
+        existing = supabase.table('organizations')\
+            .select('id')\
+            .ilike('name', org_name)\
+            .execute()
+        
+        if existing.data:
+            return existing.data[0]['id']
+        
+        # Yoksa yeni organization olustur
+        new_org = {
+            'name': org_name,
+            'slug': create_slug(org_name),
+            'type': 'vakıf',  # Varsayilan
+            'country': 'Türkiye',
+            'is_verified': True,
+            'approval_status': 'approved'
+        }
+        result = supabase.table('organizations').insert(new_org).execute()
+        if result.data:
+            print(f"  → Yeni organization oluşturuldu: {org_name}")
+            return result.data[0]['id']
+        
+    except Exception as e:
+        print(f"  → Organization hatası ({org_name}): {e}")
+    
+    return None
+
 def save_to_supabase(scholarships):
     """Supabase'e kaydet"""
     saved = 0
@@ -185,19 +255,29 @@ def save_to_supabase(scholarships):
                 print(f"Eksik alan, atlandi: {s.get('title', 'Unknown')}")
                 continue
             
-            # is_active ekle
+            # Organization name'i al ve organization_id'ye cevir
+            org_name = s.pop('organization')  # 'organization' alanini cikar
+            org_id = get_or_create_organization(org_name)
+            
+            if not org_id:
+                print(f"Organization ID alinamadi, atlandi: {s['title']}")
+                continue
+            
+            # organization_id ve slug ekle
+            s['organization_id'] = org_id
+            s['slug'] = create_slug(s['title'])
             s['is_active'] = True
             
             # Duplicate kontrolu
             existing = supabase.table('scholarships')\
                 .select('id')\
                 .eq('title', s['title'])\
-                .eq('organization', s['organization'])\
+                .eq('organization_id', org_id)\
                 .execute()
             
             if not existing.data:
                 supabase.table('scholarships').insert(s).execute()
-                print(f"Eklendi: {s['title']} ({s['organization']})")
+                print(f"Eklendi: {s['title']} ({org_name})")
                 saved += 1
             else:
                 print(f"Zaten var: {s['title']}")
