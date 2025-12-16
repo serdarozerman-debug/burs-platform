@@ -1,0 +1,87 @@
+name: 🤖 Haftalık Burs Scraper
+
+on:
+  # Her Pazartesi saat 09:00 (UTC) çalış
+  schedule:
+    - cron: '0 9 * * 1'
+  
+  # Manuel tetikleme için
+  workflow_dispatch:
+
+jobs:
+  scrape-and-update:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+      
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: 📦 Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openai beautifulsoup4 supabase python-dotenv requests unidecode
+      
+      - name: 🔍 1. Yeni Kurum Araştırma
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "🔍 Yeni burs veren kurumlar araştırılıyor..."
+          python scripts/research_new_organizations.py
+      
+      - name: 🕷️ 2. Burs Scraping
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "🕷️ Burslar scrape ediliyor..."
+          python scripts/universal_scraper.py
+      
+      - name: ✅ 3. Validasyon ve Test
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "✅ Burslar doğrulanıyor..."
+          python scripts/validate_scholarships.py
+      
+      - name: 🎨 4. Favicon Kontrolü
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "🎨 Favicon'lar kontrol ediliyor..."
+          python scripts/add_organization_logos.py
+      
+      - name: 📊 5. Rapor Oluştur
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          echo "📊 Haftalık rapor oluşturuluyor..."
+          python scripts/generate_weekly_report.py
+      
+      - name: 🚀 6. Railway Deploy Trigger
+        run: |
+          echo "🚀 Railway otomatik deploy başlatılıyor..."
+          echo "Deploy Railway tarafından otomatik yapılacak (GitHub push trigger)"
+      
+      - name: 📧 7. Bildirim Gönder (Başarılı)
+        if: success()
+        run: |
+          echo "✅ Haftalık scraping başarılı!"
+          echo "Yeni burslar eklendi ve site güncellendi."
+      
+      - name: 📧 8. Bildirim Gönder (Hata)
+        if: failure()
+        run: |
+          echo "❌ Haftalık scraping başarısız!"
+          echo "Lütfen logları kontrol edin."
+
