@@ -218,7 +218,7 @@ def create_slug(text):
     slug = re.sub(r'[-\s]+', '-', slug)
     return slug.strip('-')[:100]  # Max 100 karakter
 
-def get_or_create_organization(org_name):
+def get_or_create_organization(org_name, website_url=None):
     """Organization ID'sini al veya yeni organization olustur"""
     try:
         # Oncelikle mevcut organization'i ara
@@ -230,6 +230,17 @@ def get_or_create_organization(org_name):
         if existing.data:
             return existing.data[0]['id']
         
+        # Website URL'den domain çıkar
+        website = website_url
+        logo_url = None
+        if website_url:
+            from urllib.parse import urlparse
+            parsed = urlparse(website_url)
+            domain = parsed.netloc or parsed.path
+            if domain:
+                # Google Favicon Service kullan
+                logo_url = f"https://www.google.com/s2/favicons?domain={domain}&sz=128"
+        
         # Yoksa yeni organization olustur
         new_org = {
             'name': org_name,
@@ -237,11 +248,15 @@ def get_or_create_organization(org_name):
             'type': 'vakıf',  # Varsayilan
             'country': 'Türkiye',
             'is_verified': True,
-            'approval_status': 'approved'
+            'approval_status': 'approved',
+            'website': website,
+            'logo_url': logo_url
         }
         result = supabase.table('organizations').insert(new_org).execute()
         if result.data:
             print(f"  → Yeni organization oluşturuldu: {org_name}")
+            if logo_url:
+                print(f"  → Logo eklendi: {logo_url[:50]}...")
             return result.data[0]['id']
         
     except Exception as e:
@@ -249,7 +264,7 @@ def get_or_create_organization(org_name):
     
     return None
 
-def save_to_supabase(scholarships):
+def save_to_supabase(scholarships, source_url=None):
     """Supabase'e kaydet"""
     saved = 0
     skipped = 0
@@ -263,7 +278,7 @@ def save_to_supabase(scholarships):
             
             # Organization name'i al ve organization_id'ye cevir
             org_name = s.pop('organization')  # 'organization' alanini cikar
-            org_id = get_or_create_organization(org_name)
+            org_id = get_or_create_organization(org_name, source_url)
             
             if not org_id:
                 print(f"Organization ID alinamadi, atlandi: {s['title']}")
@@ -318,7 +333,7 @@ def scrape_all_sites():
         
         # Kaydet
         if scholarships:
-            saved = save_to_supabase(scholarships)
+            saved = save_to_supabase(scholarships, url)
             total_saved += saved
         else:
             print("Hicbir burs parse edilemedi.")
