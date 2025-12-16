@@ -30,6 +30,12 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
     { value: "lisans", label: "Lisans", count: 0 },
     { value: "yükseklisans", label: "Yüksek Lisans", count: 0 },
   ]);
+  const [daysOptions, setDaysOptions] = useState<Array<{ value: number | null; label: string; count: number }>>([
+    { value: null, label: "Tümü", count: 0 },
+    { value: 30, label: "30 Gün İçinde", count: 0 },
+    { value: 60, label: "60 Gün İçinde", count: 0 },
+    { value: 90, label: "90 Gün İçinde", count: 0 },
+  ]);
 
   // Sync localSearch with currentFilters.search when it changes externally
   useEffect(() => {
@@ -134,6 +140,40 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
           });
         
         setEducationLevels(levels);
+
+        // Calculate days left counts
+        const today = new Date();
+        const counts = {
+          all: scholarships.length,
+          days30: 0,
+          days60: 0,
+          days90: 0,
+        };
+
+        scholarships.forEach((s: any) => {
+          if (s.deadline) {
+            const deadline = new Date(s.deadline);
+            const daysLeft = Math.ceil((deadline.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+            
+            if (daysLeft >= 0 && daysLeft <= 90) {
+              counts.days90++;
+              if (daysLeft <= 60) {
+                counts.days60++;
+                if (daysLeft <= 30) {
+                  counts.days30++;
+                }
+              }
+            }
+          }
+        });
+
+        setDaysOptions([
+          { value: null, label: "Tümü", count: counts.all },
+          { value: 30, label: "30 Gün İçinde", count: counts.days30 },
+          { value: 60, label: "60 Gün İçinde", count: counts.days60 },
+          { value: 90, label: "90 Gün İçinde", count: counts.days90 },
+        ]);
+
       } catch (error) {
         console.error('Error fetching filter options:', error);
       }
@@ -202,15 +242,6 @@ const ScholarshipFilters = ({ onFilterChange, currentFilters }: ScholarshipFilte
     setLocalSearch("");
     onFilterChange(clearedFilters);
   };
-
-  // Use state variables instead of constants
-
-  const daysOptions = [
-    { value: null, label: "Tümü", count: 180 },
-    { value: 30, label: "30 Gün İçinde", count: 45 },
-    { value: 60, label: "60 Gün İçinde", count: 67 },
-    { value: 90, label: "90 Gün İçinde", count: 89 },
-  ];
 
   return (
     <div className="card-grid-2 hover-up" style={{ padding: "30px", borderRadius: "16px" }}>
