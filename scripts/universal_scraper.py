@@ -267,6 +267,7 @@ def save_to_supabase(scholarships):
             s['organization_id'] = org_id
             s['slug'] = create_slug(s['title'])
             s['is_active'] = True
+            s['is_published'] = True  # Yeni burslar otomatik yayınlansın
             
             # Duplicate kontrolu
             existing = supabase.table('scholarships')\
