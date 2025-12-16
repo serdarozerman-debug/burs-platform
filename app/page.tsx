@@ -391,7 +391,7 @@ export default function Home() {
                                       fontWeight: "bold",
                                       boxShadow: "0 1px 2px 0 rgb(0 0 0 / 0.05)"
                                     }}>
-                                      {(scholarship.organization || 'K').charAt(0)}
+                                      {(scholarship.organization?.name || 'K').charAt(0)}
                                     </div>
                                   )}
                                 </div>
