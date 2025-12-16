@@ -265,8 +265,8 @@ export default function Home() {
                       {totalCount} Burs Bulundu
                     </h5>
                   </div>
-                  <div className="d-flex align-items-center gap-2">
-                    <label htmlFor="sort-select" style={{ fontSize: "14px", fontWeight: "500", marginRight: "10px" }}>
+                  <div className="d-flex align-items-center" style={{ gap: "8px" }}>
+                    <label htmlFor="sort-select" style={{ fontSize: "14px", fontWeight: "500", marginRight: "10px", marginBottom: "0" }}>
                       Sırala:
                     </label>
                     <select
